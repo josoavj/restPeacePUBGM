@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rest in Peace (R+P) Team</title>
+
+    <meta name="description" content="Contactez la team Rest in Peace (R+P). Nous répondons à toutes vos questions et demandes de partenariat.">
+    <meta name="keywords" content="contact, email, message, partenariat, sponsoring, R+P, PUBG Mobile">
+
+    <meta property="og:title" content="Contact - Rest in Peace (R+P)">
+    <meta property="og:description" content="Entrez en contact avec la team R+P">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="Icone/ARCN.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0xXzdyD72S+j9cQvF3i1E0y3z+nQv/0hJ8W2fK3Jj8/r+s+hQ+j+D+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/contact.css">
+    <script src="JS/index.js" defer></script>
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="./index.html">R+P <span class="team-name-full">Rest in Peace</span></a>
+        </div>
+        
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu de navigation" aria-expanded="false">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="./index.html" title="Accueil de la Team R+P">Accueil</a></li>
+            <li><a href="./joueur.html" title="Nos joueurs">Joueurs</a></li>
+            <li><a href="./results.html" title="Nos résultats">Résultats</a></li>
+            <li><a href="./news.html" title="Actualités">Actualités</a></li>
+            <li><a href="./about.html" title="À Propos">À Propos</a></li>
+            <li><a href="./contact.html" title="Nous contacter">Contact</a></li>
+            <li><a href="https://github.com/josoavj" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</a></li>
+            <li><a href="./inscription.html" class="cta-button" title="Rejoindre la team">Rejoindre</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero-sub-page">
+        <div class="hero-content">
+            <h1>Nous <span class="team-highlight">Contacter</span></h1>
+            <p>Vous avez des questions ? Parlons-nous !</p>
+        </div>
+    </section>
+
+    <section class="container contact-info">
+        <h2>Informations de Contact</h2>
+        <div class="contact-cards">
+            <div class="info-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:contact@restinpeace.team">contact@restinpeace.team</a></p>
+                <p class="subtitle">Réponse en 24h</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-phone"></i>
+                <h3>Téléphone</h3>
+                <p><a href="tel:+261330000000">+261 33 00 00 00</a></p>
+                <p class="subtitle">Lun-Ven 9h-18h</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Adresse</h3>
+                <p>Antananarivo, Madagascar</p>
+                <p class="subtitle">Siège social</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-clock"></i>
+                <h3>Horaires</h3>
+                <p>Lun-Ven: 9h00 - 18h00</p>
+                <p class="subtitle">Samedi: 10h-16h</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container contact-form-section">
+        <h2>Envoyez-nous un Message</h2>
+        <p>Remplissez le formulaire ci-dessous et nous vous répondrons au plus vite.</p>
+        
+        <form class="contact-form" id="contactForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="full_name">Nom Complet *</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse Email *</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Votre téléphone">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Sélectionnez un sujet</option>
+                        <option value="recruitment">Candidature / Recrutement</option>
+                        <option value="partnership">Partenariat / Sponsoring</option>
+                        <option value="media">Demande Média / Interview</option>
+                        <option value="event">Événement / Collaboration</option>
+                        <option value="feedback">Feedback / Suggestion</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Écrivez votre message..." rows="8" required></textarea>
+            </div>
+
+            <div class="form-group checkbox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">J'accepte la <a href="./privacy-policy.html">politique de confidentialité</a></label>
+            </div>
+
+            <button type="submit" class="button-primary submit-btn">Envoyer le Message</button>
+            <p class="form-note">Champs marqués d'un * sont obligatoires</p>
+        </form>
+
+        <div id="form-message" class="form-message" style="display: none;"></div>
+    </section>
+
+    <section class="container social-section">
+        <h2>Connectez-vous avec Nous</h2>
+        <p>Suivez-nous sur les réseaux sociaux pour des mises à jour régulières et des contenus exclusifs.</p>
+        <div class="social-grid">
+            <a href="https://discord.gg/restinpeace" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fab fa-discord"></i>
+                <h4>Discord</h4>
+                <p>Rejoignez notre serveur</p>
+            </a>
+            <a href="https://twitter.com/restinpeaceteam" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fab fa-twitter"></i>
+                <h4>Twitter/X</h4>
+                <p>@restinpeaceteam</p>
+            </a>
+            <a href="https://instagram.com/restinpeaceteam" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fab fa-instagram"></i>
+                <h4>Instagram</h4>
+                <p>@restinpeaceteam</p>
+            </a>
+            <a href="https://youtube.com/@restinpeaceteam" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fab fa-youtube"></i>
+                <h4>YouTube</h4>
+                <p>Nos vidéos</p>
+            </a>
+            <a href="https://twitch.tv/restinpeaceteam" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fab fa-twitch"></i>
+                <h4>Twitch</h4>
+                <p>Suivez nos streams</p>
+            </a>
+            <a href="https://facebook.com/restinpeaceteam" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fab fa-facebook"></i>
+                <h4>Facebook</h4>
+                <p>Notre page</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="container faq-section">
+        <h2>Questions Fréquemment Posées</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Comment postuler pour rejoindre la team ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Vous pouvez postuler en remplissant notre formulaire d'inscription disponible sur la page "Rejoindre la Team". Nous évaluons les candidatures en fonction de vos statistiques PUBGM, votre potentiel et votre implication.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Quels sont les critères de sélection ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Nous recherchons des joueurs au minimum au rang Couronne avec un style de jeu adapté à notre stratégie d'équipe. La coopération et l'esprit d'équipe sont essentiels.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Pouvez-vous faire un partenariat avec nous ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Bien sûr ! Nous sommes intéressés par les partenariats strategiques. Veuillez nous contacter via le formulaire avec les détails de votre proposition.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Où peut-on vous regarder jouer ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Vous pouvez nous suivre sur Twitch où nous streamons nos entraînements et tournois. Vous pouvez aussi consulter notre chaîne YouTube pour les replays de nos matchs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Comment rejoindre votre Discord ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Vous pouvez rejoindre notre serveur Discord en cliquant sur le lien dans la section "Connectez-vous avec nous" ou en demandant une invitation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <p>R+P</p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="./about.html">À Propos</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./privacy-policy.html">Politique de Confidentialité</a></li>
+                <li><a href="./terms-of-service.html">Conditions d'Utilisation</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Suivez-nous :</h4>
+            <a href="https://discord.gg/restinpeace" target="_blank" rel="noopener noreferrer" title="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://twitter.com/restinpeaceteam" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@restinpeaceteam" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2025 Rest in Peace (R+P) Team. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<button id="scroll-to-top" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="JS/contact.js" defer></script>
+</body>
+</html>

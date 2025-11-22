@@ -1,6 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- 1. Défilement fluide (Smooth Scrolling) --- */
+    /* --- 1. Hamburger Menu Functionality --- */
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (hamburgerMenu && navMenu) {
+        // Toggle menu on hamburger click
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('open');
+            navMenu.classList.toggle('open');
+            hamburgerMenu.setAttribute('aria-expanded', hamburgerMenu.classList.contains('open'));
+        });
+
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerMenu.classList.remove('open');
+                navMenu.classList.remove('open');
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.main-nav')) {
+                hamburgerMenu.classList.remove('open');
+                navMenu.classList.remove('open');
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close menu on window resize if screen becomes larger
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) {
+                hamburgerMenu.classList.remove('open');
+                navMenu.classList.remove('open');
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    /* --- 2. Défilement fluide (Smooth Scrolling) --- */
     document.querySelectorAll('a[href^="#"], a[href^="./#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -24,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* --- 2. Barre de navigation adaptative (Shrink/Change on Scroll) --- */
+    /* --- 3. Barre de navigation adaptative (Shrink/Change on Scroll) --- */
     // La barre de navigation s'adapte en fonction du défilement de l'utilisateur
     const mainNav = document.querySelector('.main-nav');
     const header = document.querySelector('header');
@@ -40,28 +80,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* --- 3. Bouton "Retour en haut" (Scroll-to-Top) --- */
+    /* --- 4. Bouton "Retour en haut" (Scroll-to-Top) --- */
     // Le bouton apparaît et disparaît de manière fluide
     const scrollToTopButton = document.getElementById('scroll-to-top');
 
-    window.addEventListener('scroll', () => {
-        // Apparaît si le défilement est supérieur à la moitié de la hauteur de la fenêtre
-        if (window.scrollY > window.innerHeight / 2) {
-            scrollToTopButton.classList.add('show');
-        } else {
-            scrollToTopButton.classList.remove('show');
-        }
-    });
-
-    scrollToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (scrollToTopButton) {
+        window.addEventListener('scroll', () => {
+            // Apparaît si le défilement est supérieur à la moitié de la hauteur de la fenêtre
+            if (window.scrollY > window.innerHeight / 2) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
         });
-    });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
 
-    /* --- 4. Animations d'apparition au défilement (Fade-in on Scroll) --- */
+    /* --- 5. Animations d'apparition au défilement (Fade-in on Scroll) --- */
     // Gère l'animation des sections lors du défilement pour un rendu plus dynamique
     const animatedSections = document.querySelectorAll('main section:not(.hero-section)');
 

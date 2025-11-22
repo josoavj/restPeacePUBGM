@@ -26,7 +26,16 @@
         <div class="logo">
             <a href="./index.html">R+P <span class="team-name-full">Rest in Peace</span></a>
         </div>
-        <ul>
+        
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu de navigation" aria-expanded="false">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="./index.html" title="Accueil de la Team R+P">Accueil</a></li>
             <li><a href="./joueur.html" title="Nos joueurs">Joueurs</a></li>
             <li><a href="./results.html" title="Nos résultats et tournois">Résultats</a></li>
@@ -107,23 +116,73 @@
         <a href="./joueur.html" class="button-primary">Voir tous les Joueurs</a>
     </section>
 
+    <section id="stats-showcase" class="container stats-section">
+        <h2>Nos Statistiques 2025</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Tournois Gagnés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">45+</div>
+                <div class="stat-label">Matchs Disputés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.3M+</div>
+                <div class="stat-label">Points Obtenus</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Joueurs Élites</div>
+            </div>
+        </div>
+    </section>
+
     <section id="recent-news" class="container">
         <h2>Dernières Actualités</h2>
         <div class="news-grid">
             <article class="news-card">
-                <h3>Nouveau sponsor : XGaming !</h3>
-                <p class="news-date">25 Juillet 2025</p>
-                <p>Nous sommes fiers d'annoncer notre partenariat avec XGaming, un pas de plus vers de nouvelles victoires !</p>
-                <a href="./news.html#sponsor-xgaming" class="link-more">Lire l'article</a>
+                <h3>Victoire Éclatante au Championnat National 2025 !</h3>
+                <p class="news-date">22 Novembre 2025</p>
+                <p>La team Rest in Peace remporte le Championnat National PUBGM 2025 avec une domination totale ! 3 Chicken Dinners en 4 manches.</p>
+                <a href="./news.html" class="link-more">Lire l'article</a>
             </article>
             <article class="news-card">
-                <h3>Préparations pour le Championnat National</h3>
-                <p class="news-date">18 Juillet 2025</p>
-                <p>Entraînements intensifs en cours pour le prochain grand événement. Restez connectés !</p>
-                <a href="./news.html#national-championship" class="link-more">Lire l'article</a>
+                <h3>Nouveau Sponsoring : Partenariat XGaming Elite</h3>
+                <p class="news-date">18 Novembre 2025</p>
+                <p>R+P est fière d'annoncer un nouveau partenariat stratégique avec XGaming Elite, leader du gaming compétitif en Afrique.</p>
+                <a href="./news.html" class="link-more">Lire l'article</a>
             </article>
         </div>
         <a href="./news.html" class="button-primary">Toutes les Actualités</a>
+    </section>
+
+    <section id="featured-highlight" class="container featured-section">
+        <div class="featured-content">
+            <div class="featured-text">
+                <h2>Notre Dernier Tournoi</h2>
+                <h3 class="featured-title">Championnat National PUBGM 2025</h3>
+                <p class="featured-description">Une domination totale avec 145 éliminations, 0 décès inutiles, et une gestion de ressources impeccable. Ce succès est le fruit de mois d'entraînement intensif et de préparation stratégique.</p>
+                <div class="featured-stats">
+                    <div>
+                        <strong>145</strong>
+                        <span>Éliminations</span>
+                    </div>
+                    <div>
+                        <strong>3</strong>
+                        <span>Chicken Dinners</span>
+                    </div>
+                    <div>
+                        <strong>1ère</strong>
+                        <span>Place</span>
+                    </div>
+                </div>
+                <a href="./results.html" class="button-primary">Voir tous les résultats</a>
+            </div>
+            <div class="featured-image">
+                <i class="fas fa-trophy"></i>
+            </div>
+        </div>
     </section>
 
     <section id="call-to-action" class="container text-center">

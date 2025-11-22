@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Joueur - Rest in Peace (R+P) Team</title>
+
+    <meta name="description" content="Découvrez le profil détaillé d'un joueur de la team Rest in Peace (R+P) sur PUBG Mobile.">
+    <meta name="keywords" content="profil, joueur, statistiques, R+P, PUBG Mobile, e-sport">
+
+    <meta property="og:title" content="Profil Joueur - Rest in Peace (R+P)">
+    <meta property="og:description" content="Consultez le profil détaillé d'un membre de la team R+P.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="Icone/ARCN.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0xXzdyD72S+j9cQvF3i1E0y3z+nQv/0hJ8W2fK3Jj8/r+s+hQ+j+D+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="CSS/index.css">
+    <style>
+        /* Styles spécifiques pour la page profil */
+        .player-detail-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        .player-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            background: var(--card-background);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .player-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: var(--border-radius);
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 8px 20px rgba(37, 107, 235, 0.3);
+        }
+
+        .player-info h1 {
+            font-size: var(--font-size-h1);
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .player-role {
+            font-size: var(--font-size-lg);
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .player-role i {
+            color: var(--secondary-color);
+        }
+
+        .player-bio {
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            color: rgba(245, 245, 245, 0.85);
+        }
+
+        .join-date {
+            color: rgba(245, 245, 245, 0.7);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: rgba(29, 226, 167, 0.15);
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .stat-card {
+            background: var(--card-background);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+        }
+
+        .stat-label {
+            font-size: var(--font-size-sm);
+            color: rgba(245, 245, 245, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .strengths-section,
+        .achievements-section {
+            margin: var(--spacing-xl) 0;
+        }
+
+        .section-title {
+            font-size: var(--font-size-lg);
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .strengths-list,
+        .achievements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .strength-item,
+        .achievement-item {
+            background: var(--card-background);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .strength-item i,
+        .achievement-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(-4px);
+        }
+
+        .back-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover i {
+            transform: translateX(-4px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .player-header {
+                grid-template-columns: 1fr;
+            }
+
+            .player-image {
+                order: -1;
+            }
+
+            .player-info h1 {
+                font-size: var(--font-size-h2);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .strengths-list,
+            .achievements-list {
+                grid-template-columns: 1fr;
+            }
+
+            .player-detail-container {
+                padding: var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .player-detail-container {
+                padding: var(--spacing-sm);
+            }
+
+            .player-header {
+                padding: var(--spacing-md);
+                gap: var(--spacing-md);
+            }
+
+            .player-info h1 {
+                font-size: var(--font-size-lg);
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-links a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <script src="JS/index.js" defer></script>
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="./index.html">R+P <span class="team-name-full">Rest in Peace</span></a>
+        </div>
+        
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu de navigation" aria-expanded="false">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="./index.html" title="Accueil de la Team R+P">Accueil</a></li>
+            <li><a href="./joueur.html" title="Nos joueurs">Joueurs</a></li>
+            <li><a href="./results.html" title="Nos résultats">Résultats</a></li>
+            <li><a href="./news.html" title="Actualités">Actualités</a></li>
+            <li><a href="./about.html" title="À Propos">À Propos</a></li>
+            <li><a href="./contact.html" title="Nous contacter">Contact</a></li>
+            <li><a href="https://github.com/josoavj" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</a></li>
+            <li><a href="./inscription.html" class="cta-button" title="Rejoindre la team">Rejoindre</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="container player-detail-container">
+        <a href="./joueur.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Retour aux Joueurs
+        </a>
+
+        <div id="player-content" class="player-content">
+            <!-- Chargé dynamiquement par JavaScript -->
+            <div style="text-align: center; padding: var(--spacing-xl);">
+                <div class="spinner" style="border: 4px solid var(--card-background); border-top: 4px solid var(--secondary-color); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+                <p style="margin-top: var(--spacing-md); color: rgba(245, 245, 245, 0.7);">Chargement du profil...</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: var(--spacing-lg); background-color: rgba(0, 0, 0, 0.8); margin-top: var(--spacing-xl); border-top: 1px solid var(--border-color);">
+    <p style="color: rgba(245, 245, 245, 0.7); font-size: var(--font-size-sm);">
+        © 2025 Rest in Peace (R+P) - Team PUBG Mobile. Tous droits réservés.
+    </p>
+</footer>
+
+<script>
+    // Fonction pour charger et afficher le profil du joueur
+    async function loadPlayerProfile() {
+        try {
+            // Récupérer l'ID du joueur depuis les paramètres URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const playerId = parseInt(urlParams.get('id') || '1');
+
+            // Charger le fichier JSON
+            const response = await fetch('./data/players-data.json');
+            const data = await response.json();
+
+            // Trouver le joueur
+            const player = data.players.find(p => p.id === playerId);
+
+            if (!player) {
+                document.getElementById('player-content').innerHTML = `
+                    <div style="text-align: center; padding: var(--spacing-xl);">
+                        <h2 style="color: var(--primary-color);">Joueur non trouvé</h2>
+                        <p style="color: rgba(245, 245, 245, 0.7); margin: var(--spacing-md) 0;">
+                            Veuillez retourner à la <a href="./joueur.html" style="color: var(--secondary-color);">page des joueurs</a>
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Construire le HTML du profil
+            const joinDateObj = new Date(player.joinDate);
+            const joinDateFormatted = joinDateObj.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            let html = `
+                <div class="player-header">
+                    <div class="player-image">
+                        <img src="${player.image}" alt="${player.name}" title="${player.fullName}">
+                    </div>
+                    <div class="player-info">
+                        <h1>${player.name}</h1>
+                        <p style="font-size: var(--font-size-sm); color: rgba(245, 245, 245, 0.7); margin-bottom: var(--spacing-md);">
+                            ${player.fullName}
+                        </p>
+                        <div class="player-role">
+                            <i class="fas fa-shield-alt"></i>
+                            ${player.role}
+                        </div>
+                        <p class="player-bio">${player.bio}</p>
+                        <div class="join-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Rejoint le ${joinDateFormatted}
+                        </div>
+                        <div class="social-links">
+            `;
+
+            // Ajouter les liens sociaux
+            if (player.social.youtube) {
+                html += `<a href="${player.social.youtube}" target="_blank" rel="noopener noreferrer" title="YouTube">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>`;
+            }
+            if (player.social.twitch) {
+                html += `<a href="${player.social.twitch}" target="_blank" rel="noopener noreferrer" title="Twitch">
+                    <i class="fab fa-twitch"></i> Twitch
+                </a>`;
+            }
+            if (player.social.instagram) {
+                html += `<a href="https://instagram.com/${player.social.instagram.replace('@', '')}" target="_blank" rel="noopener noreferrer" title="Instagram">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>`;
+            }
+
+            html += `
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistiques -->
+                <h2 style="text-align: center; margin: var(--spacing-xl) 0 var(--spacing-lg); color: var(--primary-color);">
+                    <i class="fas fa-chart-bar" style="margin-right: var(--spacing-sm);"></i>
+                    Statistiques en Jeu
+                </h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Matchs Joués</div>
+                        <div class="stat-value">${player.stats.totalMatches}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Victoires</div>
+                        <div class="stat-value">${player.stats.wins}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Taux de Victoire</div>
+                        <div class="stat-value">${player.stats.winRate}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Top 4</div>
+                        <div class="stat-value">${player.stats.top4}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Kills Moyens</div>
+                        <div class="stat-value">${player.stats.avgKill}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Dégâts Moyens</div>
+                        <div class="stat-value">${player.stats.avgDamage.toFixed(1)}</div>
+                    </div>
+                </div>
+
+                <!-- Points Forts -->
+                <div class="strengths-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-star"></i>
+                        Points Forts
+                    </h2>
+                    <div class="strengths-list">
+            `;
+
+            player.strengths.forEach(strength => {
+                html += `
+                    <div class="strength-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>${strength}</span>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+
+                <!-- Accomplissements -->
+                <div class="achievements-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-trophy"></i>
+                        Accomplissements & Réalisations
+                    </h2>
+                    <div class="achievements-list">
+            `;
+
+            player.achievements.forEach(achievement => {
+                html += `
+                    <div class="achievement-item">
+                        <i class="fas fa-award"></i>
+                        <span>${achievement}</span>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('player-content').innerHTML = html;
+
+            // Mettre à jour le titre de la page
+            document.title = `${player.name} - Rest in Peace (R+P) Team`;
+
+        } catch (error) {
+            console.error('Erreur lors du chargement du profil:', error);
+            document.getElementById('player-content').innerHTML = `
+                <div style="text-align: center; padding: var(--spacing-xl);">
+                    <h2 style="color: var(--primary-color);">Erreur de chargement</h2>
+                    <p style="color: rgba(245, 245, 245, 0.7); margin: var(--spacing-md) 0;">
+                        Une erreur s'est produite lors du chargement du profil.
+                    </p>
+                </div>
+            `;
+        }
+    }
+
+    // Charger le profil au chargement de la page
+    document.addEventListener('DOMContentLoaded', loadPlayerProfile);
+
+    // Animation du spinner
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+</body>
+</html>
