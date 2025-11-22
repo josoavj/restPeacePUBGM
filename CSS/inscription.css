@@ -64,7 +64,6 @@ a {
 
 a:hover {
     color: var(--secondary-color);
-    text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -410,7 +409,6 @@ footer {
 
 .footer-links ul li a:hover {
     color: var(--secondary-color);
-    text-decoration: underline;
     opacity: 1;
 }
 
@@ -625,7 +623,6 @@ legend {
 
 .login-link:hover {
     color: var(--secondary-color);
-    text-decoration: underline;
 }
 
 .btn {
