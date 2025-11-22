@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats & Tournois - Rest in Peace (R+P) Team</title>
+
+    <meta name="description" content="Consultez les résultats de tous les tournois et compétitions remportés par la team Rest in Peace (R+P) sur PUBG Mobile.">
+    <meta name="keywords" content="résultats, tournois, compétitions, victoires, statistiques, R+P, PUBG Mobile">
+
+    <meta property="og:title" content="Résultats - Rest in Peace (R+P)">
+    <meta property="og:description" content="Nos victoires et performances compétitives sur PUBG Mobile.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="Icone/ARCN.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0xXzdyD72S+j9cQvF3i1E0y3z+nQv/0hJ8W2fK3Jj8/r+s+hQ+j+D+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/results.css">
+    <script src="JS/index.js" defer></script>
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="./index.html">R+P <span class="team-name-full">Rest in Peace</span></a>
+        </div>
+        
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu de navigation" aria-expanded="false">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="./index.html" title="Accueil de la Team R+P">Accueil</a></li>
+            <li><a href="./joueur.html" title="Nos joueurs">Joueurs</a></li>
+            <li><a href="./results.html" title="Nos résultats">Résultats</a></li>
+            <li><a href="./news.html" title="Actualités">Actualités</a></li>
+            <li><a href="./about.html" title="À Propos">À Propos</a></li>
+            <li><a href="./contact.html" title="Nous contacter">Contact</a></li>
+            <li><a href="https://github.com/josoavj" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</a></li>
+            <li><a href="./inscription.html" class="cta-button" title="Rejoindre la team">Rejoindre</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero-sub-page">
+        <div class="hero-content">
+            <h1>Nos Résultats & <span class="team-highlight">Tournois</span></h1>
+            <p>Découvrez notre parcours compétitif et nos performances</p>
+        </div>
+    </section>
+
+    <section class="container results-filters">
+        <h2>Filtrer par Catégorie</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="2025">2025</button>
+            <button class="filter-btn" data-filter="2024">2024</button>
+            <button class="filter-btn" data-filter="2023">2023</button>
+            <button class="filter-btn" data-filter="victory">Victoires</button>
+        </div>
+    </section>
+
+    <section class="container tournaments-section">
+        <h2>Tournois 2025</h2>
+        <div class="tournament-list">
+            <article class="tournament-card tournament-victory" data-year="2025">
+                <div class="tournament-header">
+                    <h3>Championnat National PUBGM 2025 - Finale</h3>
+                    <span class="tournament-badge victory"><i class="fas fa-trophy"></i> Victoire</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 20 Novembre 2025</p>
+                    <p><strong>Lieu :</strong> Antananarivo, Madagascar</p>
+                    <p><strong>Prix :</strong> $50,000 + Trophy</p>
+                </div>
+                <p class="tournament-description">Performance exceptionnelle de toute l'équipe avec 3 Chicken Dinners consécutifs en finale. Domination complète face aux meilleures teams du pays.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 32 Teams</span>
+                    <span><i class="fas fa-list"></i> 4 Rounds</span>
+                    <span><i class="fas fa-medal"></i> 1ère Place</span>
+                </div>
+            </article>
+
+            <article class="tournament-card tournament-victory" data-year="2025">
+                <div class="tournament-header">
+                    <h3>Ligue Régionale R+P Summer Cup</h3>
+                    <span class="tournament-badge victory"><i class="fas fa-trophy"></i> Victoire</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 15 Août 2025</p>
+                    <p><strong>Format :</strong> Best of 3</p>
+                    <p><strong>Prix :</strong> $15,000</p>
+                </div>
+                <p class="tournament-description">Victoire impressionnante lors de la compétition estivale. Notre stratégie novatrice a surpris les adversaires et consolidé notre position en haut du classement.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 16 Teams</span>
+                    <span><i class="fas fa-list"></i> 3 Matchs</span>
+                    <span><i class="fas fa-medal"></i> 1ère Place</span>
+                </div>
+            </article>
+
+            <article class="tournament-card tournament-top-4" data-year="2025">
+                <div class="tournament-header">
+                    <h3>International PUBGM Invitational 2025</h3>
+                    <span class="tournament-badge top-4"><i class="fas fa-star"></i> Top 4</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 1-5 Juillet 2025</p>
+                    <p><strong>Lieu :</strong> Global</p>
+                    <p><strong>Prix :</strong> $100,000 + Spots</p>
+                </div>
+                <p class="tournament-description">Participation à la première compétition internationale. Bien que nous n'ayons pas remporté la victoire, nous avons clairement montré que la team peut rivaliser au niveau global.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 64 Teams</span>
+                    <span><i class="fas fa-list"></i> 6 Rounds</span>
+                    <span><i class="fas fa-medal"></i> 4ème Place</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="container tournaments-section">
+        <h2>Tournois 2024</h2>
+        <div class="tournament-list">
+            <article class="tournament-card tournament-victory" data-year="2024">
+                <div class="tournament-header">
+                    <h3>Championnat National PUBGM 2024</h3>
+                    <span class="tournament-badge victory"><i class="fas fa-trophy"></i> Victoire</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 10 Décembre 2024</p>
+                    <p><strong>Lieu :</strong> Antananarivo</p>
+                    <p><strong>Prix :</strong> $40,000</p>
+                </div>
+                <p class="tournament-description">Deuxième championnat national remporté. Une victoire qui a confirmé la domination de R+P sur la scène compétitive locale.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 28 Teams</span>
+                    <span><i class="fas fa-list"></i> 4 Rounds</span>
+                    <span><i class="fas fa-medal"></i> 1ère Place</span>
+                </div>
+            </article>
+
+            <article class="tournament-card tournament-victory" data-year="2024">
+                <div class="tournament-header">
+                    <h3>Qualifier Pro League - Printemps 2024</h3>
+                    <span class="tournament-badge victory"><i class="fas fa-trophy"></i> Victoire</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 15 Mai 2024</p>
+                    <p><strong>Format :</strong> 5 Matchs</p>
+                    <p><strong>Prix :</strong> $8,000</p>
+                </div>
+                <p class="tournament-description">Qualification directe pour la Pro League grâce à cette victoire. Un jalon important dans notre évolution compétitive.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 12 Teams</span>
+                    <span><i class="fas fa-list"></i> 5 Matchs</span>
+                    <span><i class="fas fa-medal"></i> 1ère Place</span>
+                </div>
+            </article>
+
+            <article class="tournament-card tournament-top-4" data-year="2024">
+                <div class="tournament-header">
+                    <h3>African Gaming Cup 2024</h3>
+                    <span class="tournament-badge top-4"><i class="fas fa-star"></i> Top 4</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 20 Mars 2024</p>
+                    <p><strong>Lieu :</strong> Pan-Africain</p>
+                    <p><strong>Prix :</strong> $20,000</p>
+                </div>
+                <p class="tournament-description">Notre première apparition sur la scène africaine a été remarquable. Nous avons terminé 4ème parmi les meilleures teams du continent.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 32 Teams</span>
+                    <span><i class="fas fa-list"></i> 5 Rounds</span>
+                    <span><i class="fas fa-medal"></i> 4ème Place</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="container tournaments-section">
+        <h2>Tournois 2023</h2>
+        <div class="tournament-list">
+            <article class="tournament-card tournament-victory" data-year="2023">
+                <div class="tournament-header">
+                    <h3>Championnat Local PUBGM 2023 - Finale</h3>
+                    <span class="tournament-badge victory"><i class="fas fa-trophy"></i> Victoire</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 15 Décembre 2023</p>
+                    <p><strong>Lieu :</strong> Antananarivo</p>
+                    <p><strong>Prix :</strong> $5,000</p>
+                </div>
+                <p class="tournament-description">Notre première victoire majeure ! Ce succès a marqué un tournant pour la team et nous a donné confiance pour les futures compétitions.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 16 Teams</span>
+                    <span><i class="fas fa-list"></i> 3 Rounds</span>
+                    <span><i class="fas fa-medal"></i> 1ère Place</span>
+                </div>
+            </article>
+
+            <article class="tournament-card tournament-top-8" data-year="2023">
+                <div class="tournament-header">
+                    <h3>Première Compétition Officielle</h3>
+                    <span class="tournament-badge top-8"><i class="fas fa-star"></i> Top 8</span>
+                </div>
+                <div class="tournament-info">
+                    <p><strong>Date :</strong> 20 Juillet 2023</p>
+                    <p><strong>Format :</strong> Qualifying Round</p>
+                    <p><strong>Prix :</strong> Prize Pool $2,000</p>
+                </div>
+                <p class="tournament-description">Nos débuts en compétition officielle. Bien que nous n'ayons pas gagné, cette expérience a été invaluable et nous a motivés à nous améliorer.</p>
+                <div class="tournament-stats">
+                    <span><i class="fas fa-users"></i> 10 Teams</span>
+                    <span><i class="fas fa-list"></i> 2 Matchs</span>
+                    <span><i class="fas fa-medal"></i> 6ème Place</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="container recent-matches">
+        <h2>Derniers Matchs</h2>
+        <div class="matches-list">
+            <div class="match-item">
+                <div class="match-teams">
+                    <div class="team-card home">
+                        <h4>R+P</h4>
+                        <span class="score winner">145</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team-card away">
+                        <h4>SIGMA</h4>
+                        <span class="score">98</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <p><strong>19 Novembre 2025</strong> - Friendly Match</p>
+                    <p>Victoire 4-2 en kills totaux</p>
+                </div>
+            </div>
+
+            <div class="match-item">
+                <div class="match-teams">
+                    <div class="team-card home">
+                        <h4>R+P</h4>
+                        <span class="score winner">178</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team-card away">
+                        <h4>ELITE</h4>
+                        <span class="score">112</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <p><strong>15 Novembre 2025</strong> - Qualifier Match</p>
+                    <p>Victoire avec 1 Chicken Dinner</p>
+                </div>
+            </div>
+
+            <div class="match-item">
+                <div class="match-teams">
+                    <div class="team-card home">
+                        <h4>PHOENIX</h4>
+                        <span class="score">156</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team-card away">
+                        <h4>R+P</h4>
+                        <span class="score winner">189</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <p><strong>10 Novembre 2025</strong> - League Match</p>
+                    <p>Victoire décisive - 2 Chicken Dinners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <p>R+P</p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="./about.html">À Propos</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./privacy-policy.html">Politique de Confidentialité</a></li>
+                <li><a href="./terms-of-service.html">Conditions d'Utilisation</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Suivez-nous :</h4>
+            <a href="https://discord.gg/restinpeace" target="_blank" rel="noopener noreferrer" title="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://twitter.com/restinpeaceteam" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@restinpeaceteam" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2025 Rest in Peace (R+P) Team. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<button id="scroll-to-top" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+</button>
+</body>
+</html>
