@@ -1,193 +1,135 @@
-// --- 1. Importation des fonctions nécessaires depuis les SDK Firebase ---
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
-import { getAuth, signInAnonymously, signInWithCustomToken } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
-import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+// --- Gestion du formulaire d'inscription avec validation ---
 
-// --- 2. Variables globales fournies par l'environnement Canvas ---
-// Ces variables sont fournies par l'environnement d'exécution du Canvas.
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-// Instances et variables globales qui seront initialisées plus tard
-let db;
-let auth;
-let userId;
-
-// --- 3. Fonction pour afficher les messages à l'utilisateur ---
-/**
- * Affiche un message d'information, de succès ou d'erreur à l'utilisateur.
- * @param {string} message - Le message à afficher.
- * @param {'success'|'error'|'info'} type - Le type de message pour le style CSS.
- */
+// Fonction pour afficher les messages à l'utilisateur
 function showMessage(message, type = 'info') {
   const messageDiv = document.getElementById('form-message');
   if (messageDiv) {
     messageDiv.textContent = message;
-    // Supprime toutes les classes de type précédentes et ajoute la nouvelle
     messageDiv.className = `form-message ${type}`;
     messageDiv.style.display = 'block';
 
     // Cache le message après 5 secondes
     setTimeout(() => {
       messageDiv.style.display = 'none';
-      messageDiv.textContent = '';
     }, 5000);
   } else {
     console.log(`Message (${type}): ${message}`);
   }
 }
 
-// --- 4. Point d'entrée de l'application après le chargement du DOM ---
-document.addEventListener('DOMContentLoaded', async () => {
-  // Sélection du formulaire et des boutons
-  const registrationForm = document.querySelector('.registration-form-section form');
-  const resetButton = document.querySelector('.btn-reset');
+// Validation des données du formulaire
+function validateForm(formData) {
+  const errors = [];
 
-  // Initialisation de Firebase
-  if (Object.keys(firebaseConfig).length > 0) {
-    try {
-      const app = initializeApp(firebaseConfig);
-      db = getFirestore(app);
-      auth = getAuth(app);
-
-      // Authentification de l'utilisateur
-      if (initialAuthToken) {
-        // Authentification avec le jeton personnalisé
-        await signInWithCustomToken(auth, initialAuthToken);
-      } else {
-        // Authentification anonyme si le jeton n'est pas disponible
-        await signInAnonymously(auth);
-      }
-      // Récupère l'UID de l'utilisateur authentifié. Pour les utilisateurs anonymes,
-      // on utilise l'UID fourni par Firebase.
-      userId = auth.currentUser?.uid;
-      console.log('Firebase initialisé et authentifié. ID utilisateur:', userId);
-
-    } catch (error) {
-      console.error('Échec de l\'initialisation ou de l\'authentification Firebase:', error);
-      showMessage('Erreur de connexion aux services Firebase. Veuillez réessayer plus tard.', 'error');
-      // Désactive le formulaire si l'authentification échoue
-      if (registrationForm) {
-        registrationForm.style.pointerEvents = 'none';
-        registrationForm.style.opacity = '0.5';
-      }
-      return;
-    }
-  } else {
-    console.error('Configuration Firebase non trouvée. Assurez-vous que __firebase_config est défini.');
-    showMessage('Erreur: La configuration Firebase est manquante. L\'inscription ne peut pas fonctionner.', 'error');
-    if (registrationForm) {
-      registrationForm.style.pointerEvents = 'none';
-      registrationForm.style.opacity = '0.5';
-    }
-    return;
+  // Validation du nom complet
+  if (!formData.full_name || formData.full_name.trim().length < 3) {
+    errors.push('Le nom complet doit contenir au moins 3 caractères.');
   }
 
-  // --- 5. Gestion de la soumission du formulaire ---
+  // Validation de la date de naissance
+  const birthDate = new Date(formData.birth_date);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  if (today.getMonth() < birthDate.getMonth() || 
+      (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  if (age < 13) {
+    errors.push('Vous devez avoir au moins 13 ans pour rejoindre la team.');
+  }
+
+  // Validation de l'email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    errors.push('Veuillez entrer une adresse email valide.');
+  }
+
+  // Validation du pseudo PUBG
+  if (!formData.pubgm_pseudo || formData.pubgm_pseudo.trim().length < 3) {
+    errors.push('Le pseudo PUBG doit contenir au moins 3 caractères.');
+  }
+
+  // Validation de l'ID PUBG
+  if (!formData.pubgm_id || formData.pubgm_id.trim().length !== 10) {
+    errors.push('L\'ID PUBG doit contenir exactement 10 chiffres.');
+  } else if (!/^\d{10}$/.test(formData.pubgm_id)) {
+    errors.push('L\'ID PUBG ne doit contenir que des chiffres.');
+  }
+
+  // Validation du nom d'utilisateur
+  if (!formData.username || formData.username.trim().length < 3) {
+    errors.push('Le nom d\'utilisateur doit contenir au moins 3 caractères.');
+  }
+
+  // Validation du mot de passe
+  if (!formData.password || formData.password.length < 8) {
+    errors.push('Le mot de passe doit contenir au moins 8 caractères.');
+  }
+
+  // Validation de la confirmation du mot de passe
+  if (formData.password !== formData.confirm_password) {
+    errors.push('Les mots de passe ne correspondent pas.');
+  }
+
+  return errors;
+}
+
+// --- Point d'entrée de l'application après le chargement du DOM ---
+document.addEventListener('DOMContentLoaded', () => {
+  // Sélection du formulaire et des boutons
+  const registrationForm = document.querySelector('.registration-form-section form');
+
+  // Gestion de la soumission du formulaire
   if (registrationForm) {
-    registrationForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
+    registrationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-      // Récupération des valeurs des champs
-      const nom = document.getElementById('ls_nm').value.trim();
-      const prenom = document.getElementById('ls_fn').value.trim();
-      const dateNaissance = document.getElementById('ls_dt').value;
-      const genderRadio = document.querySelector('input[name="gender"]:checked');
-      const sexe = genderRadio ? genderRadio.value : '';
-      const pays = document.getElementById('ls_pays').value.trim();
-      const city = document.getElementById('ls_cpt').value.trim();
-      const postalCode = document.getElementById('ls_cps').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const pubgmPseudo = document.getElementById('ls_pseudo').value.trim();
-      const pubgmId = document.getElementById('ls_id').value.trim();
-      const device = document.getElementById('ls_app').value;
-      const level = document.getElementById('level').value;
-      const ranking = document.getElementById('ranking').value;
-      const host = document.getElementById('host').value;
-      const region = document.getElementById('region').value;
-      const username = document.getElementById('ls_usr').value.trim();
-      const password = document.getElementById('ls_pwd').value;
-      const confirmPassword = document.getElementById('ls_cpwd').value;
-      const specialities = Array.from(document.querySelectorAll('input[name="speciality[]"]:checked')).map(cb => cb.value);
+      // Récupération des données du formulaire
+      const formData = new FormData(registrationForm);
+      const data = Object.fromEntries(formData);
 
-      // --- 6. Validation des champs ---
-      if (!nom || !prenom || !dateNaissance || !sexe || !pays || !city || !email || !pubgmPseudo || !pubgmId || !device || !level || !ranking || !host || !region || !username || !password || !confirmPassword || specialities.length === 0) {
-        showMessage('Veuillez remplir tous les champs obligatoires et sélectionner au moins une spécialité.', 'error');
+      // Validation du formulaire
+      const errors = validateForm(data);
+
+      if (errors.length > 0) {
+        showMessage(errors.join(' '), 'error');
         return;
       }
 
-      if (pubgmId.length !== 10 || !/^\d{10}$/.test(pubgmId)) {
-        showMessage('L\'ID PUBG doit être composé de 10 chiffres.', 'error');
-        return;
-      }
+      // Simulation de l'envoi des données (en production, envoyer vers un backend)
+      console.log('Données du formulaire soumises:', data);
+      
+      // Message de succès
+      showMessage('Merci ! Votre inscription a été enregistrée. Nous vous contacterons bientôt.', 'success');
+      registrationForm.reset();
 
-      if (password !== confirmPassword) {
-        showMessage('Les mots de passe ne correspondent pas.', 'error');
-        return;
-      }
+      // Redirection après 3 secondes
+      setTimeout(() => {
+        window.location.href = './index.html';
+      }, 3000);
+    });
+  }
 
-      if (password.length < 6) {
-        showMessage('Le mot de passe doit contenir au moins 6 caractères.', 'error');
-        return;
-      }
+  // Validation en temps réel pour le champ d'ID PUBG
+  const pubgmIdInput = document.getElementById('pubgm_id');
+  if (pubgmIdInput) {
+    pubgmIdInput.addEventListener('input', (e) => {
+      // Autoriser uniquement les chiffres
+      e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    });
+  }
 
-      // --- 7. Construction de l'objet de données utilisateur ---
-      const userData = {
-        personal: {
-          name: nom,
-          firstName: prenom,
-          birthDate: dateNaissance,
-          gender: sexe,
-          country: pays,
-          city: city,
-          postalCode: postalCode,
-          email: email
-        },
-        pubgProfile: {
-          pseudo: pubgmPseudo,
-          id: pubgmId,
-          device: device,
-          level: level,
-          ranking: ranking,
-          specialties: specialities,
-          host: host,
-          region: region
-        },
-        account: {
-          username: username,
-          password: password
-        },
-        createdAt: new Date().toISOString(),
-        userId: userId
-      };
+  // Validation en temps réel pour la confirmation du mot de passe
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirm_password');
 
-      // --- 8. Enregistrement des données dans Firestore ---
-      try {
-        if (!db) {
-          throw new Error("L'instance Firestore n'est pas disponible.");
-        }
-        // Chemin de la collection : /artifacts/{appId}/users/{userId}/registrations
-        const userRegistrationsCollection = collection(db, `artifacts/${appId}/users/${userId}/registrations`);
-        await addDoc(userRegistrationsCollection, userData);
-
-        showMessage('Votre compte a été créé avec succès !', 'success');
-        registrationForm.reset();
-      } catch (e) {
-        console.error('Erreur lors de l\'enregistrement des données dans Firestore:', e);
-        showMessage('Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.', 'error');
+  if (confirmPasswordInput && passwordInput) {
+    confirmPasswordInput.addEventListener('input', (e) => {
+      if (passwordInput.value !== e.target.value) {
+        confirmPasswordInput.style.borderColor = '#ef4444';
+      } else {
+        confirmPasswordInput.style.borderColor = '';
       }
     });
-
-    // Gestion du bouton de réinitialisation
-    if (resetButton) {
-      resetButton.addEventListener('click', () => {
-        registrationForm.reset();
-        showMessage('Le formulaire a été réinitialisé.', 'info');
-      });
-    }
-  } else {
-    console.error('Erreur: Le formulaire d\'inscription n\'a pas été trouvé dans le DOM.');
-    showMessage('Erreur interne: Le formulaire n\'a pas pu être chargé.', 'error');
   }
 });
