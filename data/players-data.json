@@ -1,0 +1,208 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "R+P~JENZEN",
+      "fullName": "Jenzen Rakoto",
+      "role": "IGL (In-Game Leader)",
+      "position": "Leader",
+      "bio": "Jenzen est le leader incontesté de Rest in Peace. Avec une vision stratégique exceptionnelle et une compréhension profonde du jeu, il dirige l'équipe vers la victoire. Son leadership est reconnu dans toute la communauté PUBG Mobile.",
+      "joinDate": "2023-01-15",
+      "stats": {
+        "totalMatches": 245,
+        "wins": 52,
+        "top4": 125,
+        "avgKill": 3.8,
+        "winRate": "21.2%",
+        "avgDamage": 285.5
+      },
+      "achievements": [
+        "MVP Tournoi X 2025",
+        "Top 10 International Rankings 2024",
+        "5 x Champion Régional"
+      ],
+      "strengths": [
+        "Leadership stratégique",
+        "Communication d'équipe",
+        "Gestion du rotation",
+        "Decision Making"
+      ],
+      "image": "https://placehold.co/400x400/256beb/FFFFFF?text=JENZEN",
+      "social": {
+        "youtube": "https://youtube.com",
+        "twitch": "https://twitch.tv",
+        "instagram": "@jenzen_r+p"
+      }
+    },
+    {
+      "id": 2,
+      "name": "R+P~GHOST",
+      "fullName": "Jean-Claude Rakoto",
+      "role": "Entry Fragger",
+      "position": "Assault",
+      "bio": "GHOST est notre tireur d'élite offensif. Connu pour son agressivité contrôlée et sa précision au combat, il ouvre les routes à l'équipe. Sa frappe initiale change souvent le cours des matchs.",
+      "joinDate": "2023-02-20",
+      "stats": {
+        "totalMatches": 238,
+        "wins": 48,
+        "top4": 118,
+        "avgKill": 4.2,
+        "winRate": "20.2%",
+        "avgDamage": 312.8
+      },
+      "achievements": [
+        "Meilleur Fragger 2024",
+        "50+ Eliminations Tournoi Locale",
+        "Streak de 8 victoires"
+      ],
+      "strengths": [
+        "Aim et précision",
+        "Frappe offensive",
+        "Gestion d'angle",
+        "Combat close-range"
+      ],
+      "image": "https://placehold.co/400x400/1de2a7/FFFFFF?text=GHOST",
+      "social": {
+        "youtube": "https://youtube.com",
+        "twitch": "https://twitch.tv",
+        "instagram": "@ghost_r+p"
+      }
+    },
+    {
+      "id": 3,
+      "name": "R+P~BANG",
+      "fullName": "Baptiste Dupont",
+      "role": "Entry Fragger / Support / Flanker",
+      "position": "Polyvalent",
+      "bio": "BANG est notre couteau suisse. Capable de s'adapter à n'importe quel rôle, il apporte la flexibilité nécessaire à notre composition. Son jeu intelligent compense sa polyvalence.",
+      "joinDate": "2023-03-10",
+      "stats": {
+        "totalMatches": 235,
+        "wins": 47,
+        "top4": 112,
+        "avgKill": 3.9,
+        "winRate": "20.0%",
+        "avgDamage": 298.2
+      },
+      "achievements": [
+        "Meilleur Support 2024",
+        "Adaptabilité reconnue",
+        "MVP 3 Matchs Consécutifs"
+      ],
+      "strengths": [
+        "Polyvalence",
+        "Adaptabilité tactique",
+        "Support d'équipe",
+        "Flanking intelligent"
+      ],
+      "image": "https://placehold.co/400x400/ff6b6b/FFFFFF?text=BANG",
+      "social": {
+        "youtube": "https://youtube.com",
+        "twitch": "https://twitch.tv",
+        "instagram": "@bang_r+p"
+      }
+    },
+    {
+      "id": 4,
+      "name": "R+P~SHADOW",
+      "fullName": "Marc Lemoine",
+      "role": "Sniper / Mid-Range",
+      "position": "Tireur",
+      "bio": "SHADOW excelle dans les engagements à distance moyenne. Son positionnement précis et sa patience en attente font de lui un élément clé dans nos stratégies défensives.",
+      "joinDate": "2023-04-05",
+      "stats": {
+        "totalMatches": 220,
+        "wins": 44,
+        "top4": 105,
+        "avgKill": 3.5,
+        "winRate": "20.0%",
+        "avgDamage": 275.3
+      },
+      "achievements": [
+        "Meilleur Positionnement",
+        "Précision 85%+",
+        "Headshot Record"
+      ],
+      "strengths": [
+        "Précision au sniper",
+        "Positionnement stratégique",
+        "Patience",
+        "Map awareness"
+      ],
+      "image": "https://placehold.co/400x400/4ecdc4/FFFFFF?text=SHADOW",
+      "social": {
+        "youtube": "https://youtube.com",
+        "twitch": "https://twitch.tv",
+        "instagram": "@shadow_r+p"
+      }
+    },
+    {
+      "id": 5,
+      "name": "R+P~NEXUS",
+      "fullName": "Sophie Martin",
+      "role": "Support / Medic",
+      "position": "Support",
+      "bio": "NEXUS est le cœur battant de notre équipe. En tant que support, elle assure la survie du groupe et coordonne les rotations. Son jeu de support est impeccable et souvent sous-estimé.",
+      "joinDate": "2023-05-12",
+      "stats": {
+        "totalMatches": 228,
+        "wins": 45,
+        "top4": 109,
+        "avgKill": 2.8,
+        "winRate": "19.7%",
+        "avgDamage": 245.7
+      },
+      "achievements": [
+        "Meilleur Support de l'année",
+        "Taux de survie 92%",
+        "Assist Record"
+      ],
+      "strengths": [
+        "Support d'équipe",
+        "Gestion de ressources",
+        "Communication",
+        "Positionnement défensif"
+      ],
+      "image": "https://placehold.co/400x400/95e1d3/FFFFFF?text=NEXUS",
+      "social": {
+        "youtube": "https://youtube.com",
+        "twitch": "https://twitch.tv",
+        "instagram": "@nexus_r+p"
+      }
+    },
+    {
+      "id": 6,
+      "name": "R+P~TITAN",
+      "fullName": "Ahmed Hassan",
+      "role": "Assaulter / Tank",
+      "position": "Front-liner",
+      "bio": "TITAN est notre mur offensif. Avec une santé mentale de fer et une agressivité maîtrisée, il absorbe les attaques et crée les opportunités pour son équipe. Un joueur de clutch naturel.",
+      "joinDate": "2023-06-08",
+      "stats": {
+        "totalMatches": 232,
+        "wins": 46,
+        "top4": 111,
+        "avgKill": 4.1,
+        "winRate": "19.8%",
+        "avgDamage": 325.4
+      },
+      "achievements": [
+        "Clutch Master (15+ 1v4)",
+        "Damage Record Tournoi",
+        "Survie en Zone Finale"
+      ],
+      "strengths": [
+        "Agressivité contrôlée",
+        "Clutch plays",
+        "Absorption de dégâts",
+        "Endurance mentale"
+      ],
+      "image": "https://placehold.co/400x400/ffd93d/FFFFFF?text=TITAN",
+      "social": {
+        "youtube": "https://youtube.com",
+        "twitch": "https://twitch.tv",
+        "instagram": "@titan_r+p"
+      }
+    }
+  ]
+}
