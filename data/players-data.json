@@ -1,208 +1,1054 @@
 {
-  "players": [
-    {
-      "id": 1,
-      "name": "R+P~JENZEN",
-      "fullName": "Jenzen Rakoto",
-      "role": "IGL (In-Game Leader)",
-      "position": "Leader",
-      "bio": "Jenzen est le leader incontesté de Rest in Peace. Avec une vision stratégique exceptionnelle et une compréhension profonde du jeu, il dirige l'équipe vers la victoire. Son leadership est reconnu dans toute la communauté PUBG Mobile.",
-      "joinDate": "2023-01-15",
-      "stats": {
-        "totalMatches": 245,
-        "wins": 52,
-        "top4": 125,
-        "avgKill": 3.8,
-        "winRate": "21.2%",
-        "avgDamage": 285.5
-      },
-      "achievements": [
-        "MVP Tournoi X 2025",
-        "Top 10 International Rankings 2024",
-        "5 x Champion Régional"
-      ],
-      "strengths": [
-        "Leadership stratégique",
-        "Communication d'équipe",
-        "Gestion du rotation",
-        "Decision Making"
-      ],
-      "image": "https://placehold.co/400x400/256beb/FFFFFF?text=JENZEN",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@jenzen_r+p"
-      }
+ "players": [
+  {
+   "id": 1,
+   "name": "R+P~JENZEN",
+   "role": "IGL (In-Game Leader)",
+   "position": "Leader",
+   "bio": "Jenzen est le leader incontesté de Rest in Peace. Avec une vision stratégique exceptionnelle et une compréhension profonde du jeu, il dirige l'équipe vers la victoire. Son leadership est reconnu dans toute la communauté PUBG Mobile.",
+   "joinDate": "2023-01-15",
+   "stats": {
+    "totalMatches": 245,
+    "wins": 52,
+    "top4": 125,
+    "avgKill": 3.8,
+    "winRate": "21.2%",
+    "avgDamage": 285.5
+   },
+   "achievements": [
+    "MVP Tournoi X 2025",
+    "Top 10 International Rankings 2024",
+    "5 x Champion Régional"
+   ],
+   "strengths": [
+    "Leadership stratégique",
+    "Communication d'équipe",
+    "Gestion du rotation",
+    "Decision Making"
+   ],
+   "pubgId": "5101000001",
+   "tier": {
+    "name": "Conquérant",
+    "points": 5240
+   },
+   "region": "Afrique",
+   "crew": "Rest in Peace",
+   "perspective": "TPP",
+   "modes": {
+    "solo": {
+     "matches": 37,
+     "wins": 9,
+     "top10": 28,
+     "kills": 129,
+     "kd": 4.61,
+     "avgKills": 3.5,
+     "headshot": 32.9,
+     "avgDamage": 283.7,
+     "survival": 1217,
+     "longestKill": 315,
+     "maxKills": 12,
+     "assists": 58,
+     "revives": 4
     },
-    {
-      "id": 2,
-      "name": "R+P~GHOST",
-      "fullName": "Jean-Claude Rakoto",
-      "role": "Entry Fragger",
-      "position": "Assault",
-      "bio": "GHOST est notre tireur d'élite offensif. Connu pour son agressivité contrôlée et sa précision au combat, il ouvre les routes à l'équipe. Sa frappe initiale change souvent le cours des matchs.",
-      "joinDate": "2023-02-20",
-      "stats": {
-        "totalMatches": 238,
-        "wins": 48,
-        "top4": 118,
-        "avgKill": 4.2,
-        "winRate": "20.2%",
-        "avgDamage": 312.8
-      },
-      "achievements": [
-        "Meilleur Fragger 2024",
-        "50+ Eliminations Tournoi Locale",
-        "Streak de 8 victoires"
-      ],
-      "strengths": [
-        "Aim et précision",
-        "Frappe offensive",
-        "Gestion d'angle",
-        "Combat close-range"
-      ],
-      "image": "https://placehold.co/400x400/1de2a7/FFFFFF?text=GHOST",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@ghost_r+p"
-      }
+    "duo": {
+     "matches": 49,
+     "wins": 11,
+     "top10": 38,
+     "kills": 181,
+     "kd": 4.76,
+     "avgKills": 3.7,
+     "headshot": 35.7,
+     "avgDamage": 284.8,
+     "survival": 1051,
+     "longestKill": 268,
+     "maxKills": 13,
+     "assists": 65,
+     "revives": 13
     },
-    {
-      "id": 3,
-      "name": "R+P~BANG",
-      "fullName": "Baptiste Dupont",
-      "role": "Entry Fragger / Support / Flanker",
-      "position": "Polyvalent",
-      "bio": "BANG est notre couteau suisse. Capable de s'adapter à n'importe quel rôle, il apporte la flexibilité nécessaire à notre composition. Son jeu intelligent compense sa polyvalence.",
-      "joinDate": "2023-03-10",
-      "stats": {
-        "totalMatches": 235,
-        "wins": 47,
-        "top4": 112,
-        "avgKill": 3.9,
-        "winRate": "20.0%",
-        "avgDamage": 298.2
-      },
-      "achievements": [
-        "Meilleur Support 2024",
-        "Adaptabilité reconnue",
-        "MVP 3 Matchs Consécutifs"
-      ],
-      "strengths": [
-        "Polyvalence",
-        "Adaptabilité tactique",
-        "Support d'équipe",
-        "Flanking intelligent"
-      ],
-      "image": "https://placehold.co/400x400/ff6b6b/FFFFFF?text=BANG",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@bang_r+p"
-      }
-    },
-    {
-      "id": 4,
-      "name": "R+P~SHADOW",
-      "fullName": "Marc Lemoine",
-      "role": "Sniper / Mid-Range",
-      "position": "Tireur",
-      "bio": "SHADOW excelle dans les engagements à distance moyenne. Son positionnement précis et sa patience en attente font de lui un élément clé dans nos stratégies défensives.",
-      "joinDate": "2023-04-05",
-      "stats": {
-        "totalMatches": 220,
-        "wins": 44,
-        "top4": 105,
-        "avgKill": 3.5,
-        "winRate": "20.0%",
-        "avgDamage": 275.3
-      },
-      "achievements": [
-        "Meilleur Positionnement",
-        "Précision 85%+",
-        "Headshot Record"
-      ],
-      "strengths": [
-        "Précision au sniper",
-        "Positionnement stratégique",
-        "Patience",
-        "Map awareness"
-      ],
-      "image": "https://placehold.co/400x400/4ecdc4/FFFFFF?text=SHADOW",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@shadow_r+p"
-      }
-    },
-    {
-      "id": 5,
-      "name": "R+P~NEXUS",
-      "fullName": "Sophie Martin",
-      "role": "Support / Medic",
-      "position": "Support",
-      "bio": "NEXUS est le cœur battant de notre équipe. En tant que support, elle assure la survie du groupe et coordonne les rotations. Son jeu de support est impeccable et souvent sous-estimé.",
-      "joinDate": "2023-05-12",
-      "stats": {
-        "totalMatches": 228,
-        "wins": 45,
-        "top4": 109,
-        "avgKill": 2.8,
-        "winRate": "19.7%",
-        "avgDamage": 245.7
-      },
-      "achievements": [
-        "Meilleur Support de l'année",
-        "Taux de survie 92%",
-        "Assist Record"
-      ],
-      "strengths": [
-        "Support d'équipe",
-        "Gestion de ressources",
-        "Communication",
-        "Positionnement défensif"
-      ],
-      "image": "https://placehold.co/400x400/95e1d3/FFFFFF?text=NEXUS",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@nexus_r+p"
-      }
-    },
-    {
-      "id": 6,
-      "name": "R+P~TITAN",
-      "fullName": "Ahmed Hassan",
-      "role": "Assaulter / Tank",
-      "position": "Front-liner",
-      "bio": "TITAN est notre mur offensif. Avec une santé mentale de fer et une agressivité maîtrisée, il absorbe les attaques et crée les opportunités pour son équipe. Un joueur de clutch naturel.",
-      "joinDate": "2023-06-08",
-      "stats": {
-        "totalMatches": 232,
-        "wins": 46,
-        "top4": 111,
-        "avgKill": 4.1,
-        "winRate": "19.8%",
-        "avgDamage": 325.4
-      },
-      "achievements": [
-        "Clutch Master (15+ 1v4)",
-        "Damage Record Tournoi",
-        "Survie en Zone Finale"
-      ],
-      "strengths": [
-        "Agressivité contrôlée",
-        "Clutch plays",
-        "Absorption de dégâts",
-        "Endurance mentale"
-      ],
-      "image": "https://placehold.co/400x400/ffd93d/FFFFFF?text=TITAN",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@titan_r+p"
-      }
+    "squad": {
+     "matches": 245,
+     "wins": 52,
+     "top10": 188,
+     "kills": 931,
+     "kd": 4.82,
+     "avgKills": 3.8,
+     "headshot": 25.7,
+     "avgDamage": 285.5,
+     "survival": 1157,
+     "longestKill": 263,
+     "maxKills": 14,
+     "assists": 332,
+     "revives": 38
     }
-  ]
+   },
+   "weapons": [
+    {
+     "name": "M416",
+     "kills": 317,
+     "headshot": 33.4
+    },
+    {
+     "name": "AKM",
+     "kills": 205,
+     "headshot": 30.2
+    },
+    {
+     "name": "Mini14",
+     "kills": 130,
+     "headshot": 38.2
+    }
+   ],
+   "maps": [
+    {
+     "name": "Erangel",
+     "matches": 103,
+     "winRate": 21.6
+    },
+    {
+     "name": "Miramar",
+     "matches": 69,
+     "winRate": 19.2
+    },
+    {
+     "name": "Sanhok",
+     "matches": 49,
+     "winRate": 15.4
+    },
+    {
+     "name": "Vikendi",
+     "matches": 24,
+     "winRate": 23.9
+    }
+   ],
+   "controls": {
+    "device": "Tablette",
+    "fingers": 6,
+    "gyroscope": true,
+    "graphics": "HD",
+    "fps": "Extrême (60 FPS)",
+    "sensitivity": {
+     "camera": 112,
+     "ads": 48,
+     "gyro": 210
+    }
+   },
+   "recent": [
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 1,
+     "kills": 1,
+     "damage": 282,
+     "survival": 1487
+    },
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 3,
+     "kills": 5,
+     "damage": 168,
+     "survival": 1372
+    },
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 9,
+     "kills": 4,
+     "damage": 192,
+     "survival": 1537
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 3,
+     "kills": 3,
+     "damage": 317,
+     "survival": 1058
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 2,
+     "kills": 4,
+     "damage": 155,
+     "survival": 980
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "R+P~GHOST",
+   "role": "Entry Fragger",
+   "position": "Assault",
+   "bio": "GHOST est notre tireur d'élite offensif. Connu pour son agressivité contrôlée et sa précision au combat, il ouvre les routes à l'équipe. Sa frappe initiale change souvent le cours des matchs.",
+   "joinDate": "2023-02-20",
+   "stats": {
+    "totalMatches": 238,
+    "wins": 48,
+    "top4": 118,
+    "avgKill": 4.2,
+    "winRate": "20.2%",
+    "avgDamage": 312.8
+   },
+   "achievements": [
+    "Meilleur Fragger 2024",
+    "50+ Eliminations Tournoi Locale",
+    "Streak de 8 victoires"
+   ],
+   "strengths": [
+    "Aim et précision",
+    "Frappe offensive",
+    "Gestion d'angle",
+    "Combat close-range"
+   ],
+   "pubgId": "5102000002",
+   "tier": {
+    "name": "Conquérant",
+    "points": 5012
+   },
+   "region": "Afrique",
+   "crew": "Rest in Peace",
+   "perspective": "TPP",
+   "modes": {
+    "solo": {
+     "matches": 36,
+     "wins": 8,
+     "top10": 27,
+     "kills": 139,
+     "kd": 4.96,
+     "avgKills": 3.9,
+     "headshot": 26.1,
+     "avgDamage": 310.8,
+     "survival": 1214,
+     "longestKill": 280,
+     "maxKills": 14,
+     "assists": 37,
+     "revives": 6
+    },
+    "duo": {
+     "matches": 48,
+     "wins": 11,
+     "top10": 35,
+     "kills": 196,
+     "kd": 5.3,
+     "avgKills": 4.1,
+     "headshot": 30.3,
+     "avgDamage": 312.0,
+     "survival": 1050,
+     "longestKill": 204,
+     "maxKills": 16,
+     "assists": 53,
+     "revives": 14
+    },
+    "squad": {
+     "matches": 238,
+     "wins": 48,
+     "top10": 177,
+     "kills": 1000,
+     "kd": 5.26,
+     "avgKills": 4.2,
+     "headshot": 28.1,
+     "avgDamage": 312.8,
+     "survival": 1099,
+     "longestKill": 271,
+     "maxKills": 14,
+     "assists": 305,
+     "revives": 29
+    }
+   },
+   "weapons": [
+    {
+     "name": "UMP45",
+     "kills": 340,
+     "headshot": 28.3
+    },
+    {
+     "name": "M416",
+     "kills": 220,
+     "headshot": 30.3
+    },
+    {
+     "name": "Vector",
+     "kills": 140,
+     "headshot": 40.1
+    }
+   ],
+   "maps": [
+    {
+     "name": "Erangel",
+     "matches": 100,
+     "winRate": 17.6
+    },
+    {
+     "name": "Miramar",
+     "matches": 67,
+     "winRate": 20.1
+    },
+    {
+     "name": "Sanhok",
+     "matches": 48,
+     "winRate": 25.6
+    },
+    {
+     "name": "Vikendi",
+     "matches": 24,
+     "winRate": 25.0
+    }
+   ],
+   "controls": {
+    "device": "iPhone",
+    "fingers": 5,
+    "gyroscope": true,
+    "graphics": "HD",
+    "fps": "Extrême (60 FPS)",
+    "sensitivity": {
+     "camera": 124,
+     "ads": 52,
+     "gyro": 225
+    }
+   },
+   "recent": [
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 2,
+     "kills": 4,
+     "damage": 371,
+     "survival": 1636
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 2,
+     "kills": 6,
+     "damage": 360,
+     "survival": 856
+    },
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 4,
+     "kills": 5,
+     "damage": 285,
+     "survival": 1438
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 9,
+     "kills": 6,
+     "damage": 236,
+     "survival": 1333
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 1,
+     "kills": 9,
+     "damage": 301,
+     "survival": 1277
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "R+P~BANG",
+   "role": "Entry Fragger / Support / Flanker",
+   "position": "Polyvalent",
+   "bio": "BANG est notre couteau suisse. Capable de s'adapter à n'importe quel rôle, il apporte la flexibilité nécessaire à notre composition. Son jeu intelligent compense sa polyvalence.",
+   "joinDate": "2023-03-10",
+   "stats": {
+    "totalMatches": 235,
+    "wins": 47,
+    "top4": 112,
+    "avgKill": 3.9,
+    "winRate": "20.0%",
+    "avgDamage": 298.2
+   },
+   "achievements": [
+    "Meilleur Support 2024",
+    "Adaptabilité reconnue",
+    "MVP 3 Matchs Consécutifs"
+   ],
+   "strengths": [
+    "Polyvalence",
+    "Adaptabilité tactique",
+    "Support d'équipe",
+    "Flanking intelligent"
+   ],
+   "pubgId": "5103000003",
+   "tier": {
+    "name": "Dominateur As",
+    "points": 4380
+   },
+   "region": "Afrique",
+   "crew": "Rest in Peace",
+   "perspective": "FPP",
+   "modes": {
+    "solo": {
+     "matches": 35,
+     "wins": 8,
+     "top10": 25,
+     "kills": 126,
+     "kd": 4.67,
+     "avgKills": 3.6,
+     "headshot": 30.4,
+     "avgDamage": 296.3,
+     "survival": 969,
+     "longestKill": 287,
+     "maxKills": 14,
+     "assists": 36,
+     "revives": 10
+    },
+    "duo": {
+     "matches": 47,
+     "wins": 10,
+     "top10": 34,
+     "kills": 178,
+     "kd": 4.81,
+     "avgKills": 3.8,
+     "headshot": 25.0,
+     "avgDamage": 297.5,
+     "survival": 954,
+     "longestKill": 221,
+     "maxKills": 14,
+     "assists": 64,
+     "revives": 8
+    },
+    "squad": {
+     "matches": 235,
+     "wins": 47,
+     "top10": 168,
+     "kills": 916,
+     "kd": 4.87,
+     "avgKills": 3.9,
+     "headshot": 36.9,
+     "avgDamage": 298.2,
+     "survival": 953,
+     "longestKill": 283,
+     "maxKills": 15,
+     "assists": 278,
+     "revives": 36
+    }
+   },
+   "weapons": [
+    {
+     "name": "M416",
+     "kills": 312,
+     "headshot": 24.8
+    },
+    {
+     "name": "SCAR-L",
+     "kills": 202,
+     "headshot": 42.3
+    },
+    {
+     "name": "Vector",
+     "kills": 128,
+     "headshot": 38.4
+    }
+   ],
+   "maps": [
+    {
+     "name": "Erangel",
+     "matches": 99,
+     "winRate": 24.6
+    },
+    {
+     "name": "Miramar",
+     "matches": 66,
+     "winRate": 17.7
+    },
+    {
+     "name": "Sanhok",
+     "matches": 47,
+     "winRate": 23.7
+    },
+    {
+     "name": "Vikendi",
+     "matches": 24,
+     "winRate": 24.9
+    }
+   ],
+   "controls": {
+    "device": "Android",
+    "fingers": 4,
+    "gyroscope": false,
+    "graphics": "HD",
+    "fps": "Ultra (60 FPS)",
+    "sensitivity": {
+     "camera": 118,
+     "ads": 50,
+     "gyro": 0
+    }
+   },
+   "recent": [
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 3,
+     "kills": 5,
+     "damage": 346,
+     "survival": 1599
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 6,
+     "kills": 3,
+     "damage": 249,
+     "survival": 1139
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 6,
+     "kills": 6,
+     "damage": 276,
+     "survival": 1265
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 1,
+     "kills": 2,
+     "damage": 278,
+     "survival": 1652
+    },
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 3,
+     "kills": 4,
+     "damage": 259,
+     "survival": 1533
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "R+P~SHADOW",
+   "role": "Sniper / Mid-Range",
+   "position": "Tireur",
+   "bio": "SHADOW excelle dans les engagements à distance moyenne. Son positionnement précis et sa patience en attente font de lui un élément clé dans nos stratégies défensives.",
+   "joinDate": "2023-04-05",
+   "stats": {
+    "totalMatches": 220,
+    "wins": 44,
+    "top4": 105,
+    "avgKill": 3.5,
+    "winRate": "20.0%",
+    "avgDamage": 275.3
+   },
+   "achievements": [
+    "Meilleur Positionnement",
+    "Précision 85%+",
+    "Headshot Record"
+   ],
+   "strengths": [
+    "Précision au sniper",
+    "Positionnement stratégique",
+    "Patience",
+    "Map awareness"
+   ],
+   "pubgId": "5104000004",
+   "tier": {
+    "name": "Dominateur As",
+    "points": 4210
+   },
+   "region": "Afrique",
+   "crew": "Rest in Peace",
+   "perspective": "TPP",
+   "modes": {
+    "solo": {
+     "matches": 33,
+     "wins": 7,
+     "top10": 24,
+     "kills": 106,
+     "kd": 4.08,
+     "avgKills": 3.2,
+     "headshot": 45.8,
+     "avgDamage": 273.5,
+     "survival": 1184,
+     "longestKill": 414,
+     "maxKills": 12,
+     "assists": 42,
+     "revives": 6
+    },
+    "duo": {
+     "matches": 44,
+     "wins": 10,
+     "top10": 32,
+     "kills": 149,
+     "kd": 4.38,
+     "avgKills": 3.4,
+     "headshot": 42.0,
+     "avgDamage": 274.6,
+     "survival": 980,
+     "longestKill": 477,
+     "maxKills": 14,
+     "assists": 43,
+     "revives": 12
+    },
+    "squad": {
+     "matches": 220,
+     "wins": 44,
+     "top10": 158,
+     "kills": 770,
+     "kd": 4.38,
+     "avgKills": 3.5,
+     "headshot": 41.4,
+     "avgDamage": 275.3,
+     "survival": 1176,
+     "longestKill": 326,
+     "maxKills": 13,
+     "assists": 252,
+     "revives": 38
+    }
+   },
+   "weapons": [
+    {
+     "name": "Kar98k",
+     "kills": 262,
+     "headshot": 37.2
+    },
+    {
+     "name": "M24",
+     "kills": 169,
+     "headshot": 43.1
+    },
+    {
+     "name": "SKS",
+     "kills": 108,
+     "headshot": 35.5
+    }
+   ],
+   "maps": [
+    {
+     "name": "Erangel",
+     "matches": 92,
+     "winRate": 22.8
+    },
+    {
+     "name": "Miramar",
+     "matches": 62,
+     "winRate": 16.0
+    },
+    {
+     "name": "Sanhok",
+     "matches": 44,
+     "winRate": 18.7
+    },
+    {
+     "name": "Vikendi",
+     "matches": 22,
+     "winRate": 21.8
+    }
+   ],
+   "controls": {
+    "device": "Android",
+    "fingers": 4,
+    "gyroscope": true,
+    "graphics": "HD",
+    "fps": "Ultra (60 FPS)",
+    "sensitivity": {
+     "camera": 96,
+     "ads": 36,
+     "gyro": 190
+    }
+   },
+   "recent": [
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 4,
+     "kills": 0,
+     "damage": 374,
+     "survival": 844
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 6,
+     "kills": 4,
+     "damage": 389,
+     "survival": 951
+    },
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 6,
+     "kills": 4,
+     "damage": 323,
+     "survival": 1532
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 6,
+     "kills": 3,
+     "damage": 101,
+     "survival": 983
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 6,
+     "kills": 7,
+     "damage": 188,
+     "survival": 1329
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "R+P~NEXUS",
+   "role": "Support / Medic",
+   "position": "Support",
+   "bio": "NEXUS est le cœur battant de notre équipe. En tant que support, elle assure la survie du groupe et coordonne les rotations. Son jeu de support est impeccable et souvent sous-estimé.",
+   "joinDate": "2023-05-12",
+   "stats": {
+    "totalMatches": 228,
+    "wins": 45,
+    "top4": 109,
+    "avgKill": 2.8,
+    "winRate": "19.7%",
+    "avgDamage": 245.7
+   },
+   "achievements": [
+    "Meilleur Support de l'année",
+    "Taux de survie 92%",
+    "Assist Record"
+   ],
+   "strengths": [
+    "Support d'équipe",
+    "Gestion de ressources",
+    "Communication",
+    "Positionnement défensif"
+   ],
+   "pubgId": "5105000005",
+   "tier": {
+    "name": "Maître As",
+    "points": 3880
+   },
+   "region": "Afrique",
+   "crew": "Rest in Peace",
+   "perspective": "TPP",
+   "modes": {
+    "solo": {
+     "matches": 34,
+     "wins": 7,
+     "top10": 25,
+     "kills": 88,
+     "kd": 3.26,
+     "avgKills": 2.6,
+     "headshot": 32.1,
+     "avgDamage": 244.1,
+     "survival": 1198,
+     "longestKill": 236,
+     "maxKills": 10,
+     "assists": 45,
+     "revives": 21
+    },
+    "duo": {
+     "matches": 46,
+     "wins": 10,
+     "top10": 33,
+     "kills": 125,
+     "kd": 3.47,
+     "avgKills": 2.7,
+     "headshot": 32.0,
+     "avgDamage": 245.1,
+     "survival": 1001,
+     "longestKill": 243,
+     "maxKills": 10,
+     "assists": 43,
+     "revives": 33
+    },
+    "squad": {
+     "matches": 228,
+     "wins": 45,
+     "top10": 164,
+     "kills": 638,
+     "kd": 3.49,
+     "avgKills": 2.8,
+     "headshot": 26.0,
+     "avgDamage": 245.7,
+     "survival": 1099,
+     "longestKill": 277,
+     "maxKills": 11,
+     "assists": 355,
+     "revives": 156
+    }
+   },
+   "weapons": [
+    {
+     "name": "M416",
+     "kills": 217,
+     "headshot": 35.9
+    },
+    {
+     "name": "DP-28",
+     "kills": 140,
+     "headshot": 41.9
+    },
+    {
+     "name": "QBZ",
+     "kills": 89,
+     "headshot": 26.4
+    }
+   ],
+   "maps": [
+    {
+     "name": "Erangel",
+     "matches": 96,
+     "winRate": 27.8
+    },
+    {
+     "name": "Miramar",
+     "matches": 64,
+     "winRate": 26.5
+    },
+    {
+     "name": "Sanhok",
+     "matches": 46,
+     "winRate": 24.4
+    },
+    {
+     "name": "Vikendi",
+     "matches": 23,
+     "winRate": 24.0
+    }
+   ],
+   "controls": {
+    "device": "iPhone",
+    "fingers": 4,
+    "gyroscope": false,
+    "graphics": "HD",
+    "fps": "Extrême (60 FPS)",
+    "sensitivity": {
+     "camera": 108,
+     "ads": 46,
+     "gyro": 0
+    }
+   },
+   "recent": [
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 2,
+     "kills": 4,
+     "damage": 175,
+     "survival": 1105
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 1,
+     "kills": 0,
+     "damage": 256,
+     "survival": 1307
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 1,
+     "kills": 2,
+     "damage": 57,
+     "survival": 1593
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 2,
+     "kills": 7,
+     "damage": 359,
+     "survival": 998
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 4,
+     "kills": 6,
+     "damage": 291,
+     "survival": 1204
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "R+P~TITAN",
+   "role": "Assaulter / Tank",
+   "position": "Front-liner",
+   "bio": "TITAN est notre mur offensif. Avec une santé mentale de fer et une agressivité maîtrisée, il absorbe les attaques et crée les opportunités pour son équipe. Un joueur de clutch naturel.",
+   "joinDate": "2023-06-08",
+   "stats": {
+    "totalMatches": 232,
+    "wins": 46,
+    "top4": 111,
+    "avgKill": 4.1,
+    "winRate": "19.8%",
+    "avgDamage": 325.4
+   },
+   "achievements": [
+    "Clutch Master (15+ 1v4)",
+    "Damage Record Tournoi",
+    "Survie en Zone Finale"
+   ],
+   "strengths": [
+    "Agressivité contrôlée",
+    "Clutch plays",
+    "Absorption de dégâts",
+    "Endurance mentale"
+   ],
+   "pubgId": "5106000006",
+   "tier": {
+    "name": "Dominateur As",
+    "points": 4150
+   },
+   "region": "Afrique",
+   "crew": "Rest in Peace",
+   "perspective": "FPP",
+   "modes": {
+    "solo": {
+     "matches": 35,
+     "wins": 8,
+     "top10": 25,
+     "kills": 132,
+     "kd": 4.89,
+     "avgKills": 3.8,
+     "headshot": 36.0,
+     "avgDamage": 323.3,
+     "survival": 985,
+     "longestKill": 224,
+     "maxKills": 13,
+     "assists": 41,
+     "revives": 6
+    },
+    "duo": {
+     "matches": 46,
+     "wins": 10,
+     "top10": 33,
+     "kills": 183,
+     "kd": 5.08,
+     "avgKills": 4.0,
+     "headshot": 27.9,
+     "avgDamage": 324.6,
+     "survival": 1227,
+     "longestKill": 232,
+     "maxKills": 14,
+     "assists": 64,
+     "revives": 7
+    },
+    "squad": {
+     "matches": 232,
+     "wins": 46,
+     "top10": 166,
+     "kills": 951,
+     "kd": 5.11,
+     "avgKills": 4.1,
+     "headshot": 35.8,
+     "avgDamage": 325.4,
+     "survival": 1118,
+     "longestKill": 211,
+     "maxKills": 16,
+     "assists": 327,
+     "revives": 55
+    }
+   },
+   "weapons": [
+    {
+     "name": "AKM",
+     "kills": 323,
+     "headshot": 28.1
+    },
+    {
+     "name": "M762",
+     "kills": 209,
+     "headshot": 35.6
+    },
+    {
+     "name": "Groza",
+     "kills": 133,
+     "headshot": 34.4
+    }
+   ],
+   "maps": [
+    {
+     "name": "Erangel",
+     "matches": 97,
+     "winRate": 16.7
+    },
+    {
+     "name": "Miramar",
+     "matches": 65,
+     "winRate": 18.8
+    },
+    {
+     "name": "Sanhok",
+     "matches": 46,
+     "winRate": 15.4
+    },
+    {
+     "name": "Vikendi",
+     "matches": 23,
+     "winRate": 21.6
+    }
+   ],
+   "controls": {
+    "device": "Tablette",
+    "fingers": 5,
+    "gyroscope": true,
+    "graphics": "HD",
+    "fps": "Ultra (60 FPS)",
+    "sensitivity": {
+     "camera": 130,
+     "ads": 54,
+     "gyro": 215
+    }
+   },
+   "recent": [
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 9,
+     "kills": 4,
+     "damage": 151,
+     "survival": 881
+    },
+    {
+     "map": "Sanhok",
+     "mode": "Squad",
+     "rank": 4,
+     "kills": 2,
+     "damage": 193,
+     "survival": 924
+    },
+    {
+     "map": "Erangel",
+     "mode": "Squad",
+     "rank": 9,
+     "kills": 2,
+     "damage": 39,
+     "survival": 1544
+    },
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 6,
+     "kills": 3,
+     "damage": 305,
+     "survival": 1517
+    },
+    {
+     "map": "Miramar",
+     "mode": "Squad",
+     "rank": 3,
+     "kills": 4,
+     "damage": 319,
+     "survival": 1487
+    }
+   ]
+  }
+ ]
 }

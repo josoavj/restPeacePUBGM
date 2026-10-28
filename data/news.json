@@ -1,0 +1,53 @@
+{
+  "news": [
+    {
+      "date": "22 novembre 2025",
+      "cat": "tournament",
+      "title": "Victoire éclatante au Championnat National 2025 !",
+      "excerpt": "La team Rest in Peace remporte le Championnat National PUBGM 2025 avec une domination totale.",
+      "body": "Une finale sans précédent : 3 Chicken Dinners en 4 manches, 145 éliminations et une gestion de ressources impeccable. Ce succès est le fruit de mois d'entraînement intensif, de coaching et de la détermination de chaque joueur. Merci à XGaming et à toute notre communauté !"
+    },
+    {
+      "date": "18 novembre 2025",
+      "cat": "announcement",
+      "title": "Nouveau sponsoring : partenariat avec XGaming Elite",
+      "excerpt": "R+P annonce un partenariat stratégique avec XGaming Elite, leader du gaming compétitif en Afrique."
+    },
+    {
+      "date": "15 novembre 2025",
+      "cat": "player",
+      "title": "JENZEN élu meilleur IGL de l'année",
+      "excerpt": "Notre capitaine reçoit le prix du Meilleur In-Game Leader aux Awards PUBGM Afrique 2025."
+    },
+    {
+      "date": "10 novembre 2025",
+      "cat": "update",
+      "title": "Nouveau système d'entraînement",
+      "excerpt": "Un système d'entraînement analytique basé sur l'IA pour optimiser les performances du roster."
+    },
+    {
+      "date": "5 novembre 2025",
+      "cat": "tournament",
+      "title": "Qualification pour la Coupe internationale",
+      "excerpt": "R+P est qualifiée pour la Coupe Mondiale PUBGM 2026. Prochaine étape : les éliminatoires."
+    },
+    {
+      "date": "1 novembre 2025",
+      "cat": "announcement",
+      "title": "Ouverture des recrutements",
+      "excerpt": "Nous ouvrons nos portes aux nouveaux talents : postule dès maintenant pour rejoindre la team."
+    },
+    {
+      "date": "25 octobre 2025",
+      "cat": "player",
+      "title": "GHOST atteint le rang Conquérant",
+      "excerpt": "Notre Entry Fragger franchit la barre des 5000 points de rating."
+    },
+    {
+      "date": "20 octobre 2025",
+      "cat": "update",
+      "title": "Site web entièrement redessiné",
+      "excerpt": "Une nouvelle expérience, plus rapide et adaptée au mobile."
+    }
+  ]
+}

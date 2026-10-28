@@ -1,0 +1,129 @@
+{
+  "tournaments": [
+    {
+      "year": 2025,
+      "name": "Championnat National PUBGM 2025 — Finale",
+      "date": "20 novembre 2025",
+      "meta": "Antananarivo, Madagascar",
+      "prize": "$50,000 + trophée",
+      "place": "1ère",
+      "tier": "win",
+      "teams": "32 équipes",
+      "rounds": "4 rounds",
+      "desc": "3 Chicken Dinners consécutifs en finale. Domination complète face aux meilleures teams du pays."
+    },
+    {
+      "year": 2025,
+      "name": "Ligue Régionale R+P Summer Cup",
+      "date": "15 août 2025",
+      "meta": "Best of 3",
+      "prize": "$15,000",
+      "place": "1ère",
+      "tier": "win",
+      "teams": "16 équipes",
+      "rounds": "3 matchs",
+      "desc": "Une stratégie novatrice qui a surpris les adversaires et consolidé notre place en haut du classement."
+    },
+    {
+      "year": 2025,
+      "name": "International PUBGM Invitational 2025",
+      "date": "1–5 juillet 2025",
+      "meta": "Global",
+      "prize": "$100,000 + spots",
+      "place": "4ème",
+      "tier": "top4",
+      "teams": "64 équipes",
+      "rounds": "6 rounds",
+      "desc": "Première compétition internationale : pas de victoire, mais la preuve que la team rivalise au niveau global."
+    },
+    {
+      "year": 2024,
+      "name": "Championnat National PUBGM 2024",
+      "date": "10 décembre 2024",
+      "meta": "Antananarivo",
+      "prize": "$40,000",
+      "place": "1ère",
+      "tier": "win",
+      "teams": "28 équipes",
+      "rounds": "4 rounds",
+      "desc": "Deuxième titre national, qui confirme la domination de R+P sur la scène locale."
+    },
+    {
+      "year": 2024,
+      "name": "Qualifier Pro League — Printemps 2024",
+      "date": "15 mai 2024",
+      "meta": "5 matchs",
+      "prize": "$8,000",
+      "place": "1ère",
+      "tier": "win",
+      "teams": "12 équipes",
+      "rounds": "5 matchs",
+      "desc": "Qualification directe pour la Pro League : un jalon important dans notre évolution."
+    },
+    {
+      "year": 2024,
+      "name": "African Gaming Cup 2024",
+      "date": "20 mars 2024",
+      "meta": "Pan-Africain",
+      "prize": "$20,000",
+      "place": "4ème",
+      "tier": "top4",
+      "teams": "32 équipes",
+      "rounds": "5 rounds",
+      "desc": "Première apparition sur la scène africaine, 4ème parmi les meilleures teams du continent."
+    },
+    {
+      "year": 2023,
+      "name": "Championnat Local PUBGM 2023 — Finale",
+      "date": "15 décembre 2023",
+      "meta": "Antananarivo",
+      "prize": "$5,000",
+      "place": "1ère",
+      "tier": "win",
+      "teams": "16 équipes",
+      "rounds": "3 rounds",
+      "desc": "Notre première victoire majeure, un tournant pour la confiance de la team."
+    },
+    {
+      "year": 2023,
+      "name": "Première Compétition Officielle",
+      "date": "20 juillet 2023",
+      "meta": "Qualifying round",
+      "prize": "Prize pool $2,000",
+      "place": "6ème",
+      "tier": "top8",
+      "teams": "10 équipes",
+      "rounds": "2 matchs",
+      "desc": "Nos débuts en compétition officielle : une expérience précieuse qui nous a motivés à progresser."
+    }
+  ],
+  "matches": [
+    {
+      "home": "R+P",
+      "away": "SIGMA",
+      "hs": 145,
+      "as": 98,
+      "date": "19 novembre 2025",
+      "type": "Match amical",
+      "note": "Victoire 4-2 en kills totaux"
+    },
+    {
+      "home": "R+P",
+      "away": "ELITE",
+      "hs": 178,
+      "as": 112,
+      "date": "15 novembre 2025",
+      "type": "Qualifier",
+      "note": "Victoire avec 1 Chicken Dinner"
+    },
+    {
+      "home": "PHOENIX",
+      "away": "R+P",
+      "hs": 156,
+      "as": 189,
+      "date": "10 novembre 2025",
+      "type": "Ligue",
+      "note": "Victoire décisive — 2 Chicken Dinners"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "team": {
+    "name": "Rest in Peace",
+    "tag": "R+P",
+    "email": "contact@restinpeace.team",
+    "city": "Antananarivo, Madagascar"
+  },
+  "formEndpoint": "",
+  "socials": [
+    {
+      "label": "Discord",
+      "icon": "fa-brands fa-discord",
+      "url": "https://discord.gg/restinpeace"
+    },
+    {
+      "label": "X / Twitter",
+      "icon": "fa-brands fa-x-twitter",
+      "url": "https://twitter.com/restinpeaceteam"
+    },
+    {
+      "label": "Instagram",
+      "icon": "fa-brands fa-instagram",
+      "url": "https://instagram.com/restinpeaceteam"
+    },
+    {
+      "label": "YouTube",
+      "icon": "fa-brands fa-youtube",
+      "url": "https://youtube.com/@restinpeaceteam"
+    },
+    {
+      "label": "Twitch",
+      "icon": "fa-brands fa-twitch",
+      "url": "https://twitch.tv/restinpeaceteam"
+    },
+    {
+      "label": "Facebook",
+      "icon": "fa-brands fa-facebook",
+      "url": "https://facebook.com/restinpeaceteam"
+    }
+  ],
+  "stats": [
+    [
+      "12",
+      "Tournois gagnés"
+    ],
+    [
+      "45+",
+      "Compétitions"
+    ],
+    [
+      "2.3M+",
+      "Points cumulés"
+    ],
+    [
+      "6",
+      "Joueurs actifs"
+    ]
+  ]
+}

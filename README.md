@@ -1,233 +1,68 @@
-# R+P - Rest in Peace Team PUBG Mobile
+# R+P — Rest in Peace · Team PUBG Mobile
 
-## 📱 À propos du Projet
+Site vitrine de l'équipe compétitive **Rest in Peace (R+P)** : roster, résultats, actualités, histoire de la team et candidature. Site 100 % statique : HTML, CSS et JavaScript sans framework, déployé sur GitHub Pages.
 
-**R+P (Rest in Peace)** est un site web complet dédié à une équipe compétitive PUBG Mobile. Le site est conçu pour présenter les joueurs, les résultats des tournois, les actualités de la team, et permettre les inscriptions.
+## Aperçu
 
-### 🎯 Objectifs
-- Présenter la team et ses joueurs
-- Afficher les résultats et statistiques
-- Partager les actualités et annonces
-- Permettre aux nouveaux joueurs de postuler
-- Offrir une interface de contact fluide
+| Page | Fichier | Contenu |
+|---|---|---|
+| Accueil | `index.html` | Hero, dernier tournoi, stats, roster, résultats et actus récents |
+| Joueurs | `joueur.html`, `player-detail.html?id=N` | Roster et profil PUBGM complet (rang, stats Solo/Duo/Squad, armes, cartes, réglages, derniers matchs) |
+| Résultats | `results.html` | Tournois filtrables (année, victoires) et derniers matchs |
+| Actus | `news.html` | Articles filtrables par catégorie |
+| À propos | `about.html` | Mission, valeurs, parcours, organisation |
+| Contact | `contact.html` | Formulaire, réseaux, FAQ |
+| Rejoindre | `inscription.html` | Formulaire de candidature (sans compte ni mot de passe) |
 
----
+## Lancer en local
 
-## 🚀 Fonctionnalités Principales
-
-### 📄 Pages Disponibles
-1. **Accueil** (`index.html`) - Page principale avec overview de la team
-2. **Joueurs** (`joueur.html`) - Profils détaillés des joueurs avec stats
-3. **Résultats** (`results.html`) - Historique des tournois et matchs
-4. **Actualités** (`news.html`) - Blog et annonces de la team
-5. **À Propos** (`about.html`) - Histoire et valeurs de la team
-6. **Contact** (`contact.html`) - Formulaire de contact et FAQ
-7. **Inscription** (`inscription.html`) - Formulaire d'adhésion à la team
-
-### 🎨 Design & UX Améliorés
-- **Design moderne** : Interface dark mode avec dégradés élégants
-- **Responsive** : Parfaitement adapté mobile, tablette et desktop
-- **Animations fluides** : Transitions et effets visuels agréables
-- **Accessibilité** : Couleurs contrastées, navigation claire
-- **Performance** : Chargement rapide, pas de dépendances lourdes
-
-### ⚡ Fonctionnalités Interactives
-- Navigation sticky avec adaptation au défilement
-- Filtrage dynamique des actualités et résultats
-- Formulaires avec validation en temps réel
-- FAQ accordéon sur la page contact
-- Bouton retour en haut automatique
-- Animations d'apparition au défilement
-
----
-
-## 🛠️ Stack Technologique
-
-- **HTML5** - Markup sémantique
-- **CSS3** - Styles modernes (Flexbox, Grid, Variables CSS)
-- **JavaScript Vanilla** - Aucun framework, code pur
-- **Font Awesome 6** - Icônes
-- **Google Fonts** - Poppins font
-
----
-
-## 📁 Structure du Projet
-
-```
-restPeacePUBGM/
-├── index.html              # Page d'accueil
-├── joueur.html             # Page des joueurs
-├── results.html            # Page des résultats
-├── news.html               # Page des actualités
-├── about.html              # Page À Propos
-├── contact.html            # Page de contact
-├── inscription.html        # Formulaire d'inscription
-├── CSS/
-│   ├── index.css           # Styles principaux
-│   ├── inscription.css     # Styles du formulaire
-│   ├── joueur.css          # Styles des joueurs
-│   ├── about.css           # Styles À Propos
-│   ├── results.css         # Styles résultats
-│   ├── news.css            # Styles actualités
-│   └── contact.css         # Styles contact
-├── JS/
-│   ├── index.js            # Logique principale
-│   ├── inscription.js      # Validation formulaire
-│   ├── news.js             # Filtrage actualités
-│   ├── contact.js          # Gestion contact et FAQ
-│   └── Template.js         # Utilitaires
-├── Icône/
-│   └── ARCN.ico            # Favicon
-└── README.md               # Ce fichier
-```
-
----
-
-## 🎮 Contenu de la Team
-
-### Joueurs Principaux
-- **JENZEN** - IGL (In-Game Leader)
-- **GHOST** - Entry Fragger
-- **BANG** - Flanker/Support
-- **HADES** - Sniper/Recon
-- **HADYX** - Sniper
-- **LOKI** - Recon
-
-### Réussite
-- **12** Tournois gagnés en 2025
-- **45+** Compétitions disputées
-- **2.3M+** Points cumulés
-- **Top 4** International 2025
-
----
-
-## 📋 Formulaires & Validation
-
-### Formulaire d'Inscription
-Valide les éléments suivants :
-- ✅ Nom complet (min. 3 caractères)
-- ✅ Âge minimum (13 ans)
-- ✅ Email valide
-- ✅ Pseudo PUBG unique
-- ✅ ID PUBG (10 chiffres)
-- ✅ Mot de passe fort (min. 8 caractères)
-- ✅ Spécialités sélectionnées
-
-### Formulaire de Contact
-Avec catégories :
-- Candidature/Recrutement
-- Partenariat/Sponsoring
-- Demande Média
-- Événements
-- Feedback
-
----
-
-## 🌐 Réseaux Sociaux
-
-La team est disponible sur :
-- **Discord** - Serveur communautaire
-- **Twitter/X** - Annonces et mises à jour
-- **Instagram** - Contenu visuel
-- **YouTube** - Vidéos et replays
-- **Twitch** - Streams en direct
-- **Facebook** - Page officielle
-
----
-
-## 💻 Installation & Utilisation
-
-### Pour consulter le site localement :
+Les pages chargent leurs données avec `fetch`, ce qui ne fonctionne pas en ouvrant les fichiers directement (`file://`). Utilise un serveur local :
 
 ```bash
-# 1. Cloner le repository
 git clone https://github.com/josoavj/restPeacePUBGM.git
-
-# 2. Naviguer vers le dossier
 cd restPeacePUBGM
-
-# 3. Ouvrir dans un navigateur
-# Ouvrir index.html directement ou utiliser un serveur local
-python -m http.server 8000  # Python 3
-# Puis accéder à http://localhost:8000
+python -m http.server 8000   # puis http://localhost:8000
 ```
 
----
+## Structure
 
-## 🎨 Personnalisation
-
-### Modifier les Couleurs
-Éditer les variables CSS dans `CSS/index.css` :
-```css
-:root {
-    --primary-color: #256beb;      /* Bleu principal */
-    --secondary-color: #1de2a7;    /* Vert/Cyan */
-    --background-dark: #10192d;    /* Fond */
-    /* ... */
-}
+```
+├── *.html                # pages (coquilles légères, données injectées par JS)
+├── css/style.css         # design system unique (tokens, composants, responsive)
+├── js/main.js            # nav, footer, rendu JSON, formulaires
+├── data/                 # contenu éditable : site, players-data, results, news
+├── assets/               # favicon et icônes
+├── docs/CONTENU.md       # guide d'édition du contenu
+└── .github/workflows/    # déploiement GitHub Pages
 ```
 
-### Ajouter des Joueurs
-Éditer `joueur.html` et ajouter des cartes :
-```html
-<article class="player-card">
-    <img src="URL_AVATAR" alt="Nom">
-    <h3>R+P~NOM</h3>
-    <p class="role">Rôle: ...</p>
-    <!-- ... -->
-</article>
-```
+## Design
 
----
+- Style esport : fond sombre, grille subtile, angles coupés, un seul bleu d'accent (`--blue`, `--blue-d` pour les surfaces pleines), sans dégradé, titres en Rajdhani et texte en Inter.
+- Tous les tokens (couleurs, découpe `--cut`, hauteur de nav, polices) sont dans `:root` en tête de `css/style.css`.
+- **Responsive mobile-first** : grilles `auto-fit`, tiroir de navigation sous 1080 px, aucun défilement horizontal testé à 375 px et 1280 px.
+- **Navigation** : header translucide, lien actif, barre de progression de lecture, tiroir latéral avec overlay (fermeture par clic, lien ou `Échap`), bouton retour en haut.
+- **Accessibilité** : lien d'évitement, `aria-current`, `aria-expanded`, focus visible, `prefers-reduced-motion` respecté.
 
-## 📱 Responsive Design
+## Formulaires
 
-- **Desktop** : Layout complet avec tous les détails
-- **Tablette** : Grilles adaptées (2 colonnes)
-- **Mobile** : Une seule colonne, navigation simplifiée
+Le site n'a pas de backend. Dans `data/site.json` :
 
-Les breakpoints utilisés :
-- `768px` - Transition desktop/tablette
-- `480px` - Transition tablette/mobile
+- `formEndpoint` renseigné (par exemple un endpoint [Formspree](https://formspree.io)) : les formulaires envoient du JSON en POST vers cette URL.
+- `formEndpoint` vide (défaut) : un `mailto:` pré-rempli vers `team.email` est ouvert.
 
----
+Un champ piège (`website`) filtre les robots les plus simples.
 
-## 🚀 Optimisations Future
+## Déploiement
 
-- [ ] Ajouter une page de statistiques détaillées
-- [ ] Implémenter un système de commentaires
-- [ ] Intégrer les APIs des réseaux sociaux
-- [ ] Ajouter un système d'authentification
-- [ ] Implémenter une base de données
-- [ ] Créer une app mobile
-- [ ] Ajouter des vidéos intégrées
-- [ ] Système de notifications
+Le workflow `.github/workflows/static.yml` publie le dépôt sur GitHub Pages à chaque push sur `master`. Activer *Settings → Pages → Source : GitHub Actions*.
 
----
+## À vérifier avant la mise en ligne
 
-## 📝 Licence
+- Les URLs des réseaux sociaux et l'email dans `data/site.json` (valeurs reprises de l'ancien site).
+- Les contenus de `data/*.json`, qui sont des exemples à remplacer par les vrais résultats et joueurs. Les statistiques détaillées des profils (modes, armes, cartes, réglages, derniers matchs) et les ID PUBG sont des **valeurs d'exemple** à remplacer par les données réelles de chaque joueur.
+- Ajouter de vraies photos de joueurs : voir `docs/CONTENU.md`.
 
-Ce projet est développé par **josoavj** pour la team **Rest in Peace (R+P)**.
+## Licence
 
----
-
-## 📞 Contact & Support
-
-- **Email** : contact@restinpeace.team
-- **GitHub** : [github.com/josoavj](https://github.com/josoavj)
-- **Discord** : Rejoignez notre serveur
-- **Site** : [restinpeace.team](https://restinpeace.team)
-
----
-
-## 🙏 Remerciements
-
-Merci à :
-- L'équipe Rest in Peace pour leur dévouement
-- La communauté PUBG Mobile
-- Tous les sponsors et partenaires
-
----
-
-**Dernière mise à jour** : 22 Novembre 2025  
-**Version** : 2.0 - Complete Redesign & Enhancement
+Projet développé par **josoavj** pour la team Rest in Peace (R+P).
