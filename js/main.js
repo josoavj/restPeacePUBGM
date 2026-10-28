@@ -75,7 +75,7 @@ const CATS = { tournament: 'Tournoi', announcement: 'Annonce', player: 'Joueur',
 const playerCard = p => reveal(h('a', { class: 'card cut player', href: `player-detail.html?id=${p.id}` },
   h('div', { class: 'avatar', 'aria-hidden': 'true' }, short(p.name).slice(0, 2).toUpperCase()),
   h('span', { class: 'chip' }, p.position), h('h3', {}, short(p.name)), h('p', { class: 'muted' }, p.role),
-  h('dl', { class: 'mini' }, h('div', {}, h('dt', {}, 'Win rate'), h('dd', {}, p.stats.winRate)), h('div', {}, h('dt', {}, 'Kills moy.'), h('dd', {}, p.stats.avgKill)))));
+  h('dl', { class: 'mini' }, h('div', {}, h('dt', {}, 'Rang'), h('dd', {}, p.tier.name)), h('div', {}, h('dt', {}, 'K/D'), h('dd', {}, p.modes.squad.kd.toFixed(2))), h('div', {}, h('dt', {}, 'Win rate'), h('dd', {}, p.stats.winRate)))));
 
 const tournamentRow = t => { const [cls, label] = TIER[t.tier];
   return reveal(h('article', { class: 'card cut t-row' },
@@ -117,18 +117,44 @@ const R = {
   async latest(box) { const t = (await load('results')).tournaments[0]; const [cls, label] = TIER[t.tier];
     box.append(h('p', { class: 'eyebrow' }, 'Dernier tournoi'), h('div', { class: `badge ${cls}`, style: 'width:110px;margin-bottom:1rem' }, h('div', {}, t.place, h('small', {}, label))), h('h3', {}, t.name), h('p', { class: 'meta', style: 'margin:.5rem 0' }, h('span', {}, t.date), h('span', {}, t.meta)), h('p', { class: 'muted' }, t.desc), h('a', { class: 'link-more', href: 'results.html', style: 'display:inline-block;margin-top:1rem' }, 'Tous les résultats')); },
   async player(box) {
+    const { players } = await load('players-data');
     const id = +new URLSearchParams(location.search).get('id') || 1;
-    const p = (await load('players-data')).players.find(x => x.id === id);
+    const i = players.findIndex(x => x.id === id), p = players[i];
     if (!p) return box.append(h('p', {}, 'Joueur introuvable. '), h('a', { href: 'joueur.html' }, 'Retour au roster'));
     document.title = `${short(p.name)} — R+P Rest in Peace`;
-    const st = [['Matchs', p.stats.totalMatches], ['Victoires', p.stats.wins], ['Win rate', p.stats.winRate], ['Top 4', p.stats.top4], ['Kills moy.', p.stats.avgKill], ['Dégâts moy.', p.stats.avgDamage]];
-    box.append(h('div', { class: 'profile' }, h('div', { class: 'avatar', 'aria-hidden': 'true' }, short(p.name).slice(0, 2).toUpperCase()),
-      h('div', {}, h('span', { class: 'chip' }, p.position), h('h1', {}, short(p.name)), h('p', { class: 'lead muted' }, p.role), h('p', { style: 'margin-top:1rem' }, p.bio),
-        h('p', { class: 'muted', style: 'margin-top:.8rem' }, 'Dans la team depuis le ' + new Date(p.joinDate).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })))),
-      h('div', { class: 'stats' }, st.map(([l, v]) => h('div', { class: 'stat' }, h('b', {}, v), h('span', {}, l)))),
-      h('div', { class: 'grid wide', style: 'margin-top:2rem' },
-        h('div', { class: 'card cut' }, h('h3', {}, 'Points forts'), h('ul', { class: 'list-check', style: 'margin-top:1rem' }, p.strengths.map(s => h('li', {}, s)))),
-        h('div', { class: 'card cut' }, h('h3', {}, 'Palmarès'), h('ul', { class: 'list-check', style: 'margin-top:1rem' }, p.achievements.map(s => h('li', {}, s))))));
+    const f = (n, d = 0) => Number(n).toLocaleString('fr-FR', { maximumFractionDigits: d, minimumFractionDigits: d });
+    const mmss = t => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
+    const bar = (label, v, text, max = 100) => h('div', { class: 'bar' }, h('span', {}, label), h('i', { style: `--v:${Math.min(100, v / max * 100)}%` }), h('b', {}, text));
+    const card = (title, ...kids) => h('section', { class: 'card cut' }, h('h3', {}, title), ...kids);
+    const MODES = [['squad', 'Squad'], ['duo', 'Duo'], ['solo', 'Solo']];
+    const tiles = h('div', { class: 'stats auto' });
+    const showMode = k => { const m = p.modes[k];
+      tiles.replaceChildren(...[['Parties', f(m.matches)], ['Victoires', f(m.wins)], ['Win rate', f(m.wins / m.matches * 100, 1) + ' %'], ['Top 10', f(m.top10)], ['Éliminations', f(m.kills)], ['K/D', f(m.kd, 2)], ['Kills / partie', f(m.avgKills, 1)], ['Headshots', f(m.headshot, 1) + ' %'], ['Dégâts moy.', f(m.avgDamage, 1)], ['Survie moy.', mmss(m.survival)], ['Plus long kill', m.longestKill + ' m'], ['Max kills', m.maxKills], ['Assistances', f(m.assists)], ['Réanimations', f(m.revives)]]
+        .map(([l, v]) => h('div', { class: 'stat' }, h('b', {}, v), h('span', {}, l)))); };
+    const tabs = h('div', { class: 'filters', role: 'group', 'aria-label': 'Mode de jeu' }, MODES.map(([k, l], n) => h('button', { type: 'button', 'aria-pressed': n === 0, onclick: e => { tabs.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === e.currentTarget)); showMode(k); } }, l)));
+    showMode('squad');
+    const copy = h('button', { class: 'btn btn-ghost btn-sm', type: 'button', onclick: async e => { const b = e.currentTarget; try { await navigator.clipboard.writeText(p.pubgId); b.lastChild.textContent = ' Copié !'; setTimeout(() => (b.lastChild.textContent = " Copier l'ID"), 1800); } catch { } } }, icon('fa-regular fa-copy'), " Copier l'ID");
+    const c = p.controls, sn = c.sensitivity, maxK = Math.max(...p.weapons.map(w => w.kills));
+    box.append(
+      h('a', { class: 'link-more back', href: 'joueur.html' }, 'Retour au roster'),
+      h('div', { class: 'card cut p-head' },
+        h('div', { class: 'avatar', 'aria-hidden': 'true' }, short(p.name).slice(0, 2).toUpperCase()),
+        h('div', {}, h('div', { class: 'tags', style: 'margin:0 0 .6rem' }, h('span', { class: 'chip' }, p.position), h('span', { class: 'chip' }, p.perspective), h('span', { class: 'chip' }, p.region)),
+          h('h1', {}, short(p.name)), h('p', { class: 'muted' }, p.role + ' · Team ' + p.crew), h('p', { style: 'margin-top:.8rem' }, p.bio),
+          h('p', { class: 'meta', style: 'margin-top:.8rem' }, h('span', {}, 'ID PUBG : ' + p.pubgId), h('span', {}, 'Dans la team depuis le ' + new Date(p.joinDate).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' }))), h('div', { class: 'actions', style: 'margin-top:1rem' }, copy)),
+        h('div', { class: 'rank' }, h('small', {}, 'Rang actuel'), h('b', {}, p.tier.name), h('span', {}, f(p.tier.points) + ' pts'))),
+      h('div', { class: 'section-head', style: 'margin:2.5rem 0 1rem' }, h('div', {}, h('p', { class: 'eyebrow' }, 'Saison en cours'), h('h2', {}, 'Statistiques'))), tabs, tiles,
+      h('div', { class: 'grid wide', style: 'margin-top:1.5rem' },
+        card('Armes favorites', ...p.weapons.map(w => bar(w.name, w.kills, f(w.kills) + ' kills', maxK)), h('p', { class: 'muted', style: 'margin-top:1rem;font-size:.85rem' }, 'Headshots : ' + p.weapons.map(w => `${w.name} ${f(w.headshot, 1)} %`).join(' · '))),
+        card('Cartes', ...p.maps.map(m => bar(m.name, m.winRate, f(m.winRate, 1) + ' %', 40)), h('p', { class: 'muted', style: 'margin-top:1rem;font-size:.85rem' }, 'Taux de victoire par carte · ' + p.maps.map(m => `${m.name} ${f(m.matches)} parties`).join(' · '))),
+        card('Contrôles & réglages', h('dl', { class: 'kv' }, ...[['Appareil', c.device], ['Doigts', c.fingers + ' doigts'], ['Gyroscope', c.gyroscope ? 'Activé' : 'Désactivé'], ['Graphismes', c.graphics], ['Fréquence', c.fps]].flatMap(([k, v]) => [h('dt', {}, k), h('dd', {}, v)])),
+          bar('Caméra', sn.camera, sn.camera + ' %', 200), bar('Visée (ADS)', sn.ads, sn.ads + ' %', 100), bar('Gyroscope', sn.gyro, c.gyroscope ? sn.gyro + ' %' : '—', 300))),
+      h('div', { class: 'card cut', style: 'margin-top:1.25rem' }, h('h3', {}, 'Derniers matchs'), h('div', { class: 'table-wrap' }, h('table', {}, h('thead', {}, h('tr', {}, ['Carte', 'Mode', 'Classement', 'Éliminations', 'Dégâts', 'Survie'].map(t => h('th', {}, t)))),
+        h('tbody', {}, p.recent.map(m => h('tr', {}, h('td', {}, m.map), h('td', {}, m.mode), h('td', { class: m.rank === 1 ? 'win' : '' }, m.rank === 1 ? '#1 · Chicken Dinner' : '#' + m.rank), h('td', {}, m.kills), h('td', {}, f(m.damage)), h('td', {}, mmss(m.survival)))))))),
+      h('div', { class: 'grid wide', style: 'margin-top:1.25rem' },
+        card('Points forts', h('ul', { class: 'list-check', style: 'margin-top:1rem' }, p.strengths.map(x => h('li', {}, x)))),
+        card('Palmarès & titres', h('ul', { class: 'list-check', style: 'margin-top:1rem' }, p.achievements.map(x => h('li', {}, x))))),
+      h('nav', { class: 'p-nav', 'aria-label': 'Autres joueurs' }, ...[players[(i + players.length - 1) % players.length], players[(i + 1) % players.length]].map((o, k) => h('a', { class: 'card cut', href: `player-detail.html?id=${o.id}` }, h('small', { class: 'muted' }, k ? 'Joueur suivant →' : '← Joueur précédent'), h('b', {}, short(o.name))))));
   }
 };
 
