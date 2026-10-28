@@ -1,257 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rest in Peace (R+P) - Créer un compte</title>
-
-    <!-- Meta Descriptions pour le SEO et le partage social -->
-    <meta name="description" content="Créez votre compte pour rejoindre la communauté Rest in Peace (R+P) et postuler pour la team PUBG Mobile.">
-    <meta name="keywords" content="inscription, compte, rejoindre team, R+P, PUBG Mobile, e-sport, gaming">
-    <meta name="author" content="Votre Nom ou Nom de la Team">
-
-    <!-- Open Graph Meta Tags pour les partages sur les réseaux sociaux -->
-    <meta property="og:title" content="Inscription - Rest in Peace (R+P) Team">
-    <meta property="og:description" content="Créez votre profil joueur et rejoignez la team R+P sur PUBG Mobile.">
-    <meta property="og:image" content="URL_DE_VOTRE_IMAGE_DE_PREVIEW.jpg">
-    <meta property="og:url" content="URL_DE_VOTRE_SITE.com/inscription.html">
-    <meta property="og:type" content="website">
-
-    <link rel="icon" href="Icone/ARCN.ico" type="image/x-icon">
-
-    <!-- Font Awesome CDN pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0xXzdyD72S+j9cQvF3i1E0y3z+nQv/0hJ8W2fK3Jj8/r+s+hQ+j+D+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Lien vers le fichier CSS commun -->
-    <link rel="stylesheet" href="./CSS/index.css">
-    <!-- Lien vers le fichier CSS spécifique à cette page -->
-    <link rel="stylesheet" href="./CSS/inscription.css">
-    <script src="JS/index.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rejoindre la team — R+P Rest in Peace</title>
+<meta name="description" content="Postule pour rejoindre la team PUBG Mobile Rest in Peace.">
+<meta name="theme-color" content="#06080d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rejoindre la team — R+P Rest in Peace">
+<meta property="og:description" content="Postule pour rejoindre la team PUBG Mobile Rest in Peace.">
+<link rel="icon" href="assets/ARCN.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js" defer></script>
 </head>
-<body>
-<header>
-    <nav class="main-nav">
-        <div class="logo">
-            <a href="./index.html">R+P <span class="team-name-full">Rest in Peace</span></a>
-        </div>
-        
-        <!-- Hamburger Menu Button -->
-        <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu de navigation" aria-expanded="false">
-            <span class="hamburger-line line-1"></span>
-            <span class="hamburger-line line-2"></span>
-            <span class="hamburger-line line-3"></span>
-        </button>
-
-        <!-- Navigation Menu -->
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="./index.html" title="Accueil de la Team R+P">Accueil</a></li>
-            <li><a href="./joueur.html" title="Nos joueurs">Joueurs</a></li>
-            <li><a href="./results.html" title="Nos résultats">Résultats</a></li>
-            <li><a href="./news.html" title="Actualités">Actualités</a></li>
-            <li><a href="./about.html" title="À Propos">À Propos</a></li>
-            <li><a href="./contact.html" title="Nous contacter">Contact</a></li>
-            <li><a href="https://github.com/josoavj" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</a></li>
-            <li><a href="./inscription.html" class="cta-button" title="Rejoindre la team">Rejoindre</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main class="inscription-main">
-    <div id="form-message" class="form-message" style="display: none;"></div>
-
-    <section class="form-intro-section container">
-        <h1 class="page-title">Rest in Peace (R+P) Team</h1>
-        <h2 class="welcome-message">Bienvenue sur notre plateforme d'inscription !</h2>
-        <p class="intro-text">Cette page est dédiée à tous ceux qui souhaitent rejoindre la Team R+P. Chaque membre doit avoir un compte utilisateur masqué par un pseudonyme qui nous permettra de l'identifier.</p>
-        <p class="intro-text">Nous vous prions de bien vouloir remplir les informations demandées, elles nous seront utiles en cas d'urgence. Pour plus d'informations, veuillez visiter notre page Facebook.</p>
-    </section>
-
-    <section class="registration-form-section container">
-        <div class="form-container">
-            <form action="#" method="POST">
-                <h3 class="form-title">Créer un compte utilisateur</h3>
-
-                <fieldset>
-                    <legend class="legend">Informations personnelles</legend>
-                    <div class="form-group">
-                        <label for="full_name">Nom Complet</label>
-                        <input type="text" id="full_name" name="full_name" placeholder="Entrez votre nom complet" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="birth_date">Date de Naissance</label>
-                        <input type="date" id="birth_date" name="birth_date" required>
-                    </div>
-                    <div class="form-group radio-group">
-                        <label>Genre</label>
-                        <div class="radio-options">
-                            <input type="radio" id="gender_male" name="gender" value="male" checked>
-                            <label for="gender_male">Homme</label>
-                            <input type="radio" id="gender_female" name="gender" value="female">
-                            <label for="gender_female">Femme</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Pays</label>
-                        <input type="text" id="country" name="country" placeholder="Madagascar" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Ville</label>
-                        <input type="text" id="city" name="city" placeholder="Votre ville" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="postal_code">Code Postal</label>
-                        <input type="number" id="postal_code" name="postal_code" placeholder="Votre code postal">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Votre email" required>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend class="legend">Profil PUBG</legend>
-                    <div class="form-group">
-                        <label for="pubgm_pseudo">Pseudonyme PUBG</label>
-                        <input type="text" id="pubgm_pseudo" name="pubgm_pseudo" placeholder="Votre pseudo PUBG" maxlength="20" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pubgm_id">ID PUBG</label>
-                        <input type="text" id="pubgm_id" name="pubgm_id" placeholder="Votre ID PUBG (10 chiffres)" size="11" maxlength="10" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="device">Appareil</label>
-                        <select id="device" name="device">
-                            <optgroup label="Mobile">
-                                <option value="Android">Android</option>
-                                <option value="iPhone">iPhone</option>
-                            </optgroup>
-                            <optgroup label="Ordinateur">
-                                <option value="IOS/MAC">MacBook</option>
-                                <option value="Windows">Windows</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div class="form-group flex-group">
-                        <div class="select-wrapper">
-                            <label for="level">Niveau</label>
-                            <select id="level" name="level">
-                                <optgroup label="Simple">
-                                    <option value="Novice">Novice</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="Pro">Pro</option>
-                                </optgroup>
-                                <optgroup label="e-sport">
-                                    <option value="Noob">Noob</option>
-                                    <option value="Medium_e">Medium</option>
-                                    <option value="Pro_e">Pro Player</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                        <div class="select-wrapper">
-                            <label for="ranking">Classement</label>
-                            <select id="ranking" name="ranking">
-                                <option value="Bronze">Bronze</option>
-                                <option value="Argent">Argent</option>
-                                <option value="Or">Or</option>
-                                <option value="Platine">Platine</option>
-                                <option value="Diamant">Diamant</option>
-                                <option value="Couronne">Couronne</option>
-                                <option value="Champion">Champion</option>
-                                <option value="Master Champion">Maître Champion</option>
-                                <option value="Dominator Champion">Dominateur Champion</option>
-                                <option value="Conqueror">Conquérant</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <label>Spécialité</label>
-                        <div class="checkbox-options">
-                            <input type="checkbox" id="spec_camper" name="speciality[]" value="Camper" checked>
-                            <label for="spec_camper">Camper</label>
-                            <input type="checkbox" id="spec_sniper" name="speciality[]" value="Sniper">
-                            <label for="spec_sniper">Sniper</label>
-                            <input type="checkbox" id="spec_1v1" name="speciality[]" value="1V1">
-                            <label for="spec_1v1">1V1</label>
-                            <input type="checkbox" id="spec_driver" name="speciality[]" value="Driver">
-                            <label for="spec_driver">Driver</label>
-                        </div>
-                    </div>
-                    <div class="form-group flex-group">
-                        <div class="select-wrapper">
-                            <label for="host">Hôte</label>
-                            <select id="host" name="host">
-                                <option value="Europe">Europe</option>
-                                <option value="North America">Amérique du Nord</option>
-                                <option value="Asia">Asie</option>
-                                <option value="Africa">Afrique (Beta)</option>
-                            </select>
-                        </div>
-                        <div class="select-wrapper">
-                            <label for="region">Région</label>
-                            <select id="region" name="region">
-                                <option value="Europe">Europe</option>
-                                <option value="Africa">Afrique</option>
-                                <option value="Asia">Asie</option>
-                                <option value="America">Amérique</option>
-                                <option value="Oceania">Océanie</option>
-                            </select>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend class="legend">Compte Utilisateur R+P</legend>
-                    <div class="form-group">
-                        <label for="username">Nom d'utilisateur</label>
-                        <input type="text" id="username" name="username" maxlength="10" placeholder="godEren" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm_password">Confirmer le mot de passe</label>
-                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Réécrivez votre mot de passe" required>
-                    </div>
-                </fieldset>
-
-                <div class="form-actions">
-                    <button type="reset" class="btn btn-reset">Réinitialiser</button>
-                    <button type="submit" class="btn btn-submit">Enregistrer</button>
-                </div>
-            </form>
-        </div>
-    </section>
+<body data-page="inscription">
+<a class="skip" href="#main">Aller au contenu</a>
+<div id="site-header"></div>
+<main id="main">
+<section class="page-hero"><div class="container"><p class="eyebrow">Recrutement</p><h1>Rejoindre la <span class="grad">team</span></h1><p class="lead">Remplis ta candidature : pas de compte à créer, on te répond par email.</p></div></section><section class="section" style="padding-top:1rem"><div class="container"><form class="form" data-form="apply" novalidate><div class="form-grid"><div class="field"><label for="pubgm_pseudo">Pseudo PUBG *</label><input id="pubgm_pseudo" name="pubgm_pseudo" maxlength="20" required></div><div class="field"><label for="pubgm_id">ID PUBG (10 chiffres) *</label><input id="pubgm_id" name="pubgm_id" inputmode="numeric" pattern="\d{10}" maxlength="10" required></div><div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="birth_date">Date de naissance *</label><input id="birth_date" name="birth_date" type="date" autocomplete="bday" required></div><div class="field"><label for="ranking">Classement</label><select id="ranking" name="ranking"><option>Bronze</option><option>Argent</option><option>Or</option><option>Platine</option><option>Diamant</option><option>Couronne</option><option>Champion</option><option>Maître Champion</option><option>Dominateur Champion</option><option>Conquérant</option></select></div><div class="field"><label for="device">Appareil</label><select id="device" name="device"><option>Android</option><option>iPhone</option><option>Windows</option><option>Mac</option></select></div><div class="field"><label for="region">Région</label><select id="region" name="region"><option>Afrique</option><option>Europe</option><option>Asie</option><option>Amérique</option><option>Océanie</option></select></div><div class="field"><label for="discord">Discord (optionnel)</label><input id="discord" name="discord"></div></div><fieldset class="field"><legend>Rôles joués</legend><div class="checks"><label><input type="checkbox" name="roles" value="IGL"> IGL</label><label><input type="checkbox" name="roles" value="Entry Fragger"> Entry Fragger</label><label><input type="checkbox" name="roles" value="Support"> Support</label><label><input type="checkbox" name="roles" value="Sniper"> Sniper</label><label><input type="checkbox" name="roles" value="Flanker"> Flanker</label><label><input type="checkbox" name="roles" value="Driver"> Driver</label></div></fieldset><div class="field"><label for="message">Parle-nous de toi</label><textarea id="message" name="message" rows="5"></textarea></div><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn btn-primary" type="submit">Envoyer ma candidature</button></form></div></section>
 </main>
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <p>R+P</p>
-        </div>
-        <div class="footer-links">
-            <ul>
-                <li><a href="./index.html">Accueil</a></li>
-                <li><a href="./about.html">À Propos</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./privacy-policy.html">Politique de Confidentialité</a></li>
-                <li><a href="./terms-of-service.html">Conditions d'Utilisation</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <h4>Suivez-nous :</h4>
-            <a href="URL_DISCORD" target="_blank" rel="noopener noreferrer" title="Rejoignez-nous sur Discord"><i class="fab fa-discord"></i></a>
-            <a href="URL_TWITTER" target="_blank" rel="noopener noreferrer" title="Suivez-nous sur Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="URL_YOUTUBE" target="_blank" rel="noopener noreferrer" title="Nos vidéos sur YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-    <div class="copyright">
-        <p>&copy; 2025 Rest in Peace (R+P) Team. Tous droits réservés. Développé par josoavj</p>
-    </div>
-</footer>
-
-
-<script src="./JS/inscription.js" defer></script>
-<script src="./JS/Template.js" defer></script>
+<div id="site-footer"></div>
 </body>
 </html>
