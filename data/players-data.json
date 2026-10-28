@@ -3,7 +3,6 @@
     {
       "id": 1,
       "name": "R+P~JENZEN",
-      "fullName": "Jenzen Rakoto",
       "role": "IGL (In-Game Leader)",
       "position": "Leader",
       "bio": "Jenzen est le leader incontesté de Rest in Peace. Avec une vision stratégique exceptionnelle et une compréhension profonde du jeu, il dirige l'équipe vers la victoire. Son leadership est reconnu dans toute la communauté PUBG Mobile.",
@@ -26,18 +25,11 @@
         "Communication d'équipe",
         "Gestion du rotation",
         "Decision Making"
-      ],
-      "image": "https://placehold.co/400x400/256beb/FFFFFF?text=JENZEN",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@jenzen_r+p"
-      }
+      ]
     },
     {
       "id": 2,
       "name": "R+P~GHOST",
-      "fullName": "Jean-Claude Rakoto",
       "role": "Entry Fragger",
       "position": "Assault",
       "bio": "GHOST est notre tireur d'élite offensif. Connu pour son agressivité contrôlée et sa précision au combat, il ouvre les routes à l'équipe. Sa frappe initiale change souvent le cours des matchs.",
@@ -60,18 +52,11 @@
         "Frappe offensive",
         "Gestion d'angle",
         "Combat close-range"
-      ],
-      "image": "https://placehold.co/400x400/1de2a7/FFFFFF?text=GHOST",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@ghost_r+p"
-      }
+      ]
     },
     {
       "id": 3,
       "name": "R+P~BANG",
-      "fullName": "Baptiste Dupont",
       "role": "Entry Fragger / Support / Flanker",
       "position": "Polyvalent",
       "bio": "BANG est notre couteau suisse. Capable de s'adapter à n'importe quel rôle, il apporte la flexibilité nécessaire à notre composition. Son jeu intelligent compense sa polyvalence.",
@@ -94,18 +79,11 @@
         "Adaptabilité tactique",
         "Support d'équipe",
         "Flanking intelligent"
-      ],
-      "image": "https://placehold.co/400x400/ff6b6b/FFFFFF?text=BANG",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@bang_r+p"
-      }
+      ]
     },
     {
       "id": 4,
       "name": "R+P~SHADOW",
-      "fullName": "Marc Lemoine",
       "role": "Sniper / Mid-Range",
       "position": "Tireur",
       "bio": "SHADOW excelle dans les engagements à distance moyenne. Son positionnement précis et sa patience en attente font de lui un élément clé dans nos stratégies défensives.",
@@ -128,18 +106,11 @@
         "Positionnement stratégique",
         "Patience",
         "Map awareness"
-      ],
-      "image": "https://placehold.co/400x400/4ecdc4/FFFFFF?text=SHADOW",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@shadow_r+p"
-      }
+      ]
     },
     {
       "id": 5,
       "name": "R+P~NEXUS",
-      "fullName": "Sophie Martin",
       "role": "Support / Medic",
       "position": "Support",
       "bio": "NEXUS est le cœur battant de notre équipe. En tant que support, elle assure la survie du groupe et coordonne les rotations. Son jeu de support est impeccable et souvent sous-estimé.",
@@ -162,18 +133,11 @@
         "Gestion de ressources",
         "Communication",
         "Positionnement défensif"
-      ],
-      "image": "https://placehold.co/400x400/95e1d3/FFFFFF?text=NEXUS",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@nexus_r+p"
-      }
+      ]
     },
     {
       "id": 6,
       "name": "R+P~TITAN",
-      "fullName": "Ahmed Hassan",
       "role": "Assaulter / Tank",
       "position": "Front-liner",
       "bio": "TITAN est notre mur offensif. Avec une santé mentale de fer et une agressivité maîtrisée, il absorbe les attaques et crée les opportunités pour son équipe. Un joueur de clutch naturel.",
@@ -196,13 +160,7 @@
         "Clutch plays",
         "Absorption de dégâts",
         "Endurance mentale"
-      ],
-      "image": "https://placehold.co/400x400/ffd93d/FFFFFF?text=TITAN",
-      "social": {
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "@titan_r+p"
-      }
+      ]
     }
   ]
 }
