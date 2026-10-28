@@ -4,14 +4,25 @@ Tout le contenu variable est dans `data/`. Pas besoin de toucher au HTML : ajout
 
 ## `data/players-data.json`
 
+Un joueur = un objet. `id` doit être unique (il sert dans `player-detail.html?id=7`). Le visuel est un monogramme généré depuis le pseudo.
+
 ```json
-{ "id": 7, "name": "R+P~PSEUDO", "role": "Sniper", "position": "Tireur",
-  "bio": "…", "joinDate": "2025-01-15",
+{ "id": 7, "name": "R+P~PSEUDO", "role": "Sniper", "position": "Tireur", "bio": "…", "joinDate": "2025-01-15",
   "stats": { "totalMatches": 100, "wins": 20, "top4": 50, "avgKill": 3.5, "winRate": "20.0%", "avgDamage": 280.1 },
+  "pubgId": "5123456789", "region": "Afrique", "crew": "Rest in Peace", "perspective": "TPP",
+  "tier": { "name": "Conquérant", "points": 5100 },
+  "modes": { "solo": {…}, "duo": {…}, "squad": {…} },
+  "weapons": [ { "name": "M416", "kills": 400, "headshot": 31.5 } ],
+  "maps": [ { "name": "Erangel", "matches": 120, "winRate": 22.5 } ],
+  "controls": { "device": "Android", "fingers": 4, "gyroscope": true, "graphics": "HD", "fps": "Extrême (60 FPS)",
+                "sensitivity": { "camera": 110, "ads": 48, "gyro": 200 } },
+  "recent": [ { "map": "Erangel", "mode": "Squad", "rank": 1, "kills": 6, "damage": 780, "survival": 1320 } ],
   "achievements": ["…"], "strengths": ["…"] }
 ```
 
-`id` doit être unique (il sert dans `player-detail.html?id=7`). Le visuel est un monogramme généré depuis le pseudo.
+Chaque entrée de `modes` : `matches`, `wins`, `top10`, `kills`, `kd`, `avgKills`, `headshot` (%), `avgDamage`, `survival` (secondes), `longestKill` (m), `maxKills`, `assists`, `revives`. Rangs PUBG Mobile : Bronze, Argent, Or, Platine, Diamant, Couronne, As, Maître As, Dominateur As, Conquérant. `rank` d'un match récent : classement final (1 = Chicken Dinner). `survival` est en secondes.
+
+> Les valeurs fournies dans le dépôt sont des exemples : remplace-les par les chiffres réels (captures du profil en jeu).
 
 ## `data/results.json`
 
