@@ -26,7 +26,8 @@
     if (!r.ok) throw new Error(n + ' ' + r.status);
     return r.json();
   }));
-  const short = n => n.replace('R+P~', '');
+  const short = n => n.split('٭').pop(); // « R十P٭HADES » -> « HADES »
+  const avatar = p => h('div', { class: 'avatar', style: `--n:${short(p.name).length}`, 'aria-hidden': 'true' }, h('span', {}, short(p.name)));
 
   /* ---------- Header : tiroir mobile, lien actif, barre de progression ---------- */
   const LINKS = [
@@ -102,8 +103,8 @@
     $('#site-header').replaceWith(h('header', { class: 'site-header' },
       bar,
       h('div', { class: 'container nav' },
-        h('a', { class: 'brand', href: 'index.html', 'aria-label': 'R+P Rest in Peace, accueil' },
-          h('span', { class: 'brand-mark' }, 'R+P'),
+        h('a', { class: 'brand', href: 'index.html', 'aria-label': 'R十P Rest in Peace, accueil' },
+          h('span', { class: 'brand-mark' }, 'R十P'),
           h('span', { class: 'brand-name' }, 'Rest in Peace')
         ),
         nav,
@@ -140,7 +141,7 @@
         h('div', { class: 'foot' },
           h('div', {},
             h('a', { class: 'brand', href: 'index.html' },
-              h('span', { class: 'brand-mark' }, 'R+P'),
+              h('span', { class: 'brand-mark' }, 'R十P'),
               h('span', { class: 'brand-name' }, site.team.name)
             ),
             h('p', { class: 'muted', style: 'margin-top:1rem' }, 'Team PUBG Mobile compétitive basée à ' + site.team.city + '.')
@@ -164,7 +165,7 @@
             }, icon(s.icon))))
           )
         ),
-        h('p', { class: 'copy' }, `© ${new Date().getFullYear()} ${site.team.name} (R+P). Tous droits réservés. Développé par josoavj.`)
+        h('p', { class: 'copy' }, `© ${new Date().getFullYear()} ${site.team.name} (R十P). Tous droits réservés. Développé par josoavj.`)
       )
     ));
   }
@@ -175,9 +176,9 @@
   const CATS = { tournament: 'Tournoi', announcement: 'Annonce', player: 'Joueur', update: 'Mise à jour' };
 
   const playerCard = p => reveal(h('a', { class: 'card cut player', href: `player-detail.html?id=${p.id}` },
-    h('div', { class: 'avatar', 'aria-hidden': 'true' }, short(p.name).slice(0, 2).toUpperCase()),
+    avatar(p),
     h('span', { class: 'chip' }, p.position),
-    h('h3', {}, short(p.name)),
+    h('h3', {}, p.name),
     h('p', { class: 'muted' }, p.role),
     h('dl', { class: 'mini' },
       h('div', {}, h('dt', {}, 'Rang'), h('dd', {}, p.tier.name)),
@@ -305,8 +306,8 @@
       const p = players[i];
       if (!p) return box.append(h('p', {}, 'Joueur introuvable. '), h('a', { href: 'joueur.html' }, 'Retour au roster'));
 
-      document.title = `${short(p.name)} — R+P Rest in Peace`;
-      $('meta[name=description]')?.setAttribute('content', `${short(p.name)}, ${p.role} chez R+P : rang ${p.tier.name}, statistiques Solo/Duo/Squad, armes favorites et réglages.`);
+      document.title = `${short(p.name)} — R十P Rest in Peace`;
+      $('meta[name=description]')?.setAttribute('content', `${short(p.name)}, ${p.role} chez R十P : rang ${p.tier.name}, statistiques Solo/Duo/Squad, armes favorites et réglages.`);
       $('meta[property="og:title"]')?.setAttribute('content', document.title);
 
       const url = `${location.origin}${location.pathname}?id=${p.id}`;
@@ -374,14 +375,14 @@
       box.append(
         h('a', { class: 'link-more back', href: 'joueur.html' }, 'Retour au roster'),
         h('div', { class: 'card cut p-head' },
-          h('div', { class: 'avatar', 'aria-hidden': 'true' }, short(p.name).slice(0, 2).toUpperCase()),
+          avatar(p),
           h('div', {},
             h('div', { class: 'tags', style: 'margin:0 0 .6rem' },
               h('span', { class: 'chip' }, p.position),
               h('span', { class: 'chip' }, p.perspective),
               h('span', { class: 'chip' }, p.region)
             ),
-            h('h1', {}, short(p.name)),
+            h('h1', {}, p.name),
             h('p', { class: 'muted' }, p.role + ' · Team ' + p.crew),
             h('p', { style: 'margin-top:.8rem' }, p.bio),
             h('p', { class: 'meta', style: 'margin-top:.8rem' },
@@ -438,7 +439,7 @@
         h('nav', { class: 'p-nav', 'aria-label': 'Autres joueurs' },
           ...[players[(i + players.length - 1) % players.length], players[(i + 1) % players.length]].map((o, k) => h('a', { class: 'card cut', href: `player-detail.html?id=${o.id}` },
             h('small', { class: 'muted' }, k ? 'Joueur suivant →' : '← Joueur précédent'),
-            h('b', {}, short(o.name))
+            h('b', {}, o.name)
           ))
         )
       );
@@ -499,7 +500,7 @@
         const err = CHECKS[form.dataset.form](d);
         if (err) return say(err, true);
 
-        const subject = form.dataset.form === 'apply' ? `Candidature R+P — ${d.pubgm_pseudo}` : `Contact R+P — ${d.subject || 'Message'}`;
+        const subject = form.dataset.form === 'apply' ? `Candidature R十P — ${d.pubgm_pseudo}` : `Contact R十P — ${d.subject || 'Message'}`;
         if (site.formEndpoint) {
           try {
             const r = await fetch(site.formEndpoint, {
