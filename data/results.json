@@ -14,7 +14,7 @@
     },
     {
       "year": 2025,
-      "name": "Ligue Régionale R+P Summer Cup",
+      "name": "Ligue Régionale R十P Summer Cup",
       "date": "15 août 2025",
       "meta": "Best of 3",
       "prize": "$15,000",
@@ -46,7 +46,7 @@
       "tier": "win",
       "teams": "28 équipes",
       "rounds": "4 rounds",
-      "desc": "Deuxième titre national, qui confirme la domination de R+P sur la scène locale."
+      "desc": "Deuxième titre national, qui confirme la domination de R十P sur la scène locale."
     },
     {
       "year": 2024,
@@ -99,7 +99,7 @@
   ],
   "matches": [
     {
-      "home": "R+P",
+      "home": "R十P",
       "away": "SIGMA",
       "hs": 145,
       "as": 98,
@@ -108,7 +108,7 @@
       "note": "Victoire 4-2 en kills totaux"
     },
     {
-      "home": "R+P",
+      "home": "R十P",
       "away": "ELITE",
       "hs": 178,
       "as": 112,
@@ -118,7 +118,7 @@
     },
     {
       "home": "PHOENIX",
-      "away": "R+P",
+      "away": "R十P",
       "hs": 156,
       "as": 189,
       "date": "10 novembre 2025",
