@@ -31,7 +31,7 @@
     "name": "Conquérant",
     "points": 5240
    },
-   "region": "Afrique",
+   "region": "Afrique - Madagascar",
    "crew": "Rest in Peace",
    "perspective": "TPP",
    "modes": {
@@ -206,7 +206,7 @@
     "name": "Conquérant",
     "points": 5012
    },
-   "region": "Afrique",
+   "region": "Afrique - Madagascar",
    "crew": "Rest in Peace",
    "perspective": "TPP",
    "modes": {
@@ -381,7 +381,7 @@
     "name": "Dominateur As",
     "points": 4380
    },
-   "region": "Afrique",
+   "region": "Afrique - Madagascar",
    "crew": "Rest in Peace",
    "perspective": "FPP",
    "modes": {
@@ -556,7 +556,7 @@
     "name": "Dominateur As",
     "points": 4210
    },
-   "region": "Afrique",
+   "region": "Afrique - Madagascar",
    "crew": "Rest in Peace",
    "perspective": "TPP",
    "modes": {
@@ -731,7 +731,7 @@
     "name": "Maître As",
     "points": 3880
    },
-   "region": "Afrique",
+   "region": "Afrique - Madagascar",
    "crew": "Rest in Peace",
    "perspective": "TPP",
    "modes": {
@@ -877,11 +877,11 @@
   },
   {
    "id": 6,
-   "name": "R+P~TITAN",
-   "role": "Assaulter / Tank",
+   "name": "R十P٭HADES",
+   "role": "Assaulter",
    "position": "Front-liner",
-   "bio": "TITAN est notre mur offensif. Avec une santé mentale de fer et une agressivité maîtrisée, il absorbe les attaques et crée les opportunités pour son équipe. Un joueur de clutch naturel.",
-   "joinDate": "2023-06-08",
+   "bio": "HADES est notre mur offensif. Avec une santé mentale de fer et une agressivité maîtrisée, il absorbe les attaques et crée les opportunités pour son équipe. Un joueur de clutch naturel.",
+   "joinDate": "2022-06-08",
    "stats": {
     "totalMatches": 232,
     "wins": 46,
@@ -906,7 +906,7 @@
     "name": "Dominateur As",
     "points": 4150
    },
-   "region": "Afrique",
+   "region": "Afrique - Madagascar",
    "crew": "Rest in Peace",
    "perspective": "FPP",
    "modes": {
@@ -915,13 +915,13 @@
      "wins": 8,
      "top10": 25,
      "kills": 132,
-     "kd": 4.89,
-     "avgKills": 3.8,
-     "headshot": 36.0,
-     "avgDamage": 323.3,
+     "kd": 5.89,
+     "avgKills": 6,
+     "headshot": 36,
+     "avgDamage": 656,
      "survival": 985,
-     "longestKill": 224,
-     "maxKills": 13,
+     "longestKill": 357,
+     "maxKills": 26,
      "assists": 41,
      "revives": 6
     },
@@ -942,8 +942,8 @@
     },
     "squad": {
      "matches": 232,
-     "wins": 46,
-     "top10": 166,
+     "wins": 156,
+     "top10": 206,
      "kills": 951,
      "kd": 5.11,
      "avgKills": 4.1,
@@ -960,17 +960,22 @@
     {
      "name": "AKM",
      "kills": 323,
-     "headshot": 28.1
+     "headshot": 28
     },
     {
-     "name": "M762",
-     "kills": 209,
-     "headshot": 35.6
+     "name": "DBS",
+     "kills": 356,
+     "headshot": 35
     },
     {
-     "name": "Groza",
+     "name": "AUG",
      "kills": 133,
-     "headshot": 34.4
+     "headshot": 34
+    },
+    {
+     "name": "S12K",
+     "kills": 158,
+     "headshot": 39
     }
    ],
    "maps": [
@@ -996,15 +1001,15 @@
     }
    ],
    "controls": {
-    "device": "Tablette",
+    "device": "Android",
     "fingers": 5,
     "gyroscope": true,
-    "graphics": "HD",
-    "fps": "Ultra (60 FPS)",
+    "graphics": "Ultra Smooth",
+    "fps": "Extreme (60 FPS)",
     "sensitivity": {
      "camera": 130,
-     "ads": 54,
-     "gyro": 215
+     "ads": 65,
+     "gyro": 400
     }
    },
    "recent": [

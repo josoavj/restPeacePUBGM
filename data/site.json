@@ -55,5 +55,13 @@
       "6",
       "Joueurs actifs"
     ]
+  ],
+  "partners": [
+    {
+      "name": "XGaming Elite",
+      "type": "Partenaire officiel",
+      "desc": "Leader du gaming compétitif en Afrique. Partenariat stratégique annoncé en novembre 2025.",
+      "url": ""
+    }
   ]
 }

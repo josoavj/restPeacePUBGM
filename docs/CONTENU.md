@@ -35,7 +35,11 @@ Chaque entrée de `modes` : `matches`, `wins`, `top10`, `kills`, `kd`, `avgKills
 
 ## `data/site.json`
 
-`team` (nom, email, ville), `socials[]` (label, icône Font Awesome, url), `stats[]` (valeur, libellé) et `formEndpoint` (voir README).
+`team` (nom, email, ville), `socials[]` (label, icône Font Awesome, url), `stats[]` (valeur, libellé), `partners[]` (`name`, `type`, `desc`, `url` facultatif, affichés sur `partners.html`) et `formEndpoint` (voir README). L'email est aussi repris automatiquement dans `legal.html`.
+
+## Nouvelle page ou nouveau joueur
+
+Après l'ajout d'un joueur ou d'une page, relance `python scripts/build_seo.py` pour mettre à jour `sitemap.xml`.
 
 ## Statistiques et pages statiques
 
