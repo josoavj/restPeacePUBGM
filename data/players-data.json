@@ -2,7 +2,7 @@
  "players": [
   {
    "id": 1,
-   "name": "R+P~JENZEN",
+   "name": "R十P٭JENZEN",
    "role": "IGL (In-Game Leader)",
    "position": "Leader",
    "bio": "Jenzen est le leader incontesté de Rest in Peace. Avec une vision stratégique exceptionnelle et une compréhension profonde du jeu, il dirige l'équipe vers la victoire. Son leadership est reconnu dans toute la communauté PUBG Mobile.",
@@ -177,7 +177,7 @@
   },
   {
    "id": 2,
-   "name": "R+P~GHOST",
+   "name": "R十P٭GHOST",
    "role": "Entry Fragger",
    "position": "Assault",
    "bio": "GHOST est notre tireur d'élite offensif. Connu pour son agressivité contrôlée et sa précision au combat, il ouvre les routes à l'équipe. Sa frappe initiale change souvent le cours des matchs.",
@@ -352,7 +352,7 @@
   },
   {
    "id": 3,
-   "name": "R+P~BANG",
+   "name": "R十P٭BANG",
    "role": "Entry Fragger / Support / Flanker",
    "position": "Polyvalent",
    "bio": "BANG est notre couteau suisse. Capable de s'adapter à n'importe quel rôle, il apporte la flexibilité nécessaire à notre composition. Son jeu intelligent compense sa polyvalence.",
@@ -378,7 +378,7 @@
    ],
    "pubgId": "5103000003",
    "tier": {
-    "name": "Dominateur As",
+    "name": "Conquérant",
     "points": 4380
    },
    "region": "Afrique - Madagascar",
@@ -527,7 +527,7 @@
   },
   {
    "id": 4,
-   "name": "R+P~SHADOW",
+   "name": "R十P٭SHADOW",
    "role": "Sniper / Mid-Range",
    "position": "Tireur",
    "bio": "SHADOW excelle dans les engagements à distance moyenne. Son positionnement précis et sa patience en attente font de lui un élément clé dans nos stratégies défensives.",
@@ -553,7 +553,7 @@
    ],
    "pubgId": "5104000004",
    "tier": {
-    "name": "Dominateur As",
+    "name": "Dominateur Champion",
     "points": 4210
    },
    "region": "Afrique - Madagascar",
@@ -702,7 +702,7 @@
   },
   {
    "id": 5,
-   "name": "R+P~NEXUS",
+   "name": "R十P٭NEXUS",
    "role": "Support / Medic",
    "position": "Support",
    "bio": "NEXUS est le cœur battant de notre équipe. En tant que support, elle assure la survie du groupe et coordonne les rotations. Son jeu de support est impeccable et souvent sous-estimé.",
@@ -728,7 +728,7 @@
    ],
    "pubgId": "5105000005",
    "tier": {
-    "name": "Maître As",
+    "name": "Maître Champion",
     "points": 3880
    },
    "region": "Afrique - Madagascar",
@@ -903,7 +903,7 @@
    ],
    "pubgId": "5106000006",
    "tier": {
-    "name": "Dominateur As",
+    "name": "Dominateur Champion",
     "points": 4150
    },
    "region": "Afrique - Madagascar",
