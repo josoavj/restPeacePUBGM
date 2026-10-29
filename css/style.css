@@ -1,4 +1,21 @@
 @font-face {
+  font-family: 'RP Symbols';
+  font-weight: 100 900;
+  font-display: swap;
+  size-adjust: 84%;
+  unicode-range: U+5341;
+  src: url(../assets/fonts/rp-symbol-ten.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'RP Symbols';
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+066D;
+  src: url(../assets/fonts/rp-symbol-star.woff2) format('woff2');
+}
+
+@font-face {
   font-family: 'Rajdhani';
   font-style: normal;
   font-weight: 600;
@@ -38,7 +55,7 @@
   src: url(../assets/fonts/inter-600.woff2) format('woff2');
 }
 
-/* R+P — design system esport (un seul fichier). Tokens en tête, composants ensuite. */
+/* R十P — design system esport (un seul fichier). Tokens en tête, composants ensuite. */
 :root {
   color-scheme: dark;
   --header-bg: rgba(6, 8, 13, 0.72);
@@ -58,8 +75,8 @@
   --cut: 14px;
   --nav-h: 68px;
   --maxw: 1200px;
-  --ff-head: 'Rajdhani', 'Arial Narrow', 'Segoe UI', system-ui, sans-serif;
-  --ff-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --ff-head: 'Rajdhani', 'RP Symbols', 'Arial Narrow', 'Segoe UI', system-ui, sans-serif;
+  --ff-body: 'Inter', 'RP Symbols', 'Segoe UI', system-ui, sans-serif;
 }
 
 *,
@@ -630,17 +647,34 @@ a.card:hover,
 
 /* Joueurs */
 .avatar {
+  container-type: inline-size;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
   margin-bottom: 1rem;
-  font: 700 clamp(3rem, 9vw, 4.5rem) var(--ff-head);
+  padding: 0.5rem;
+  text-align: center;
+  font: 700 2.4rem var(--ff-head);
   letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.92);
   background:
     radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.35), transparent 60%),
     linear-gradient(145deg, #1a2a55, #0b1226);
   border: 1px solid var(--line);
+}
+
+/* Nom du joueur à la place de la photo : la taille s'adapte à la longueur du nom (--n) */
+.avatar span {
+  display: block;
+  max-width: 100%;
+  line-height: 1;
+  white-space: nowrap;
+  font-size: min(26cqi, calc(150cqi / var(--n, 6)));
+}
+
+.p-head h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
 }
 
 .player h3 {
