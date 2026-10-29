@@ -42,7 +42,7 @@ python -m http.server 8000   # puis http://localhost:8000
 
 ## Design
 
-- Style esport : fond sombre, grille subtile, angles coupés, un seul bleu d'accent (`--blue`, `--blue-d` pour les surfaces pleines), sans dégradé, titres en Rajdhani et texte en Inter.
+- Style esport : fond sombre, grille subtile, angles coupés, un seul bleu d'accent (`--blue`, `--blue-d` pour les surfaces pleines), sans dégradé, titres en Rajdhani et texte en Inter, **polices auto-hébergées** dans `assets/fonts/` (licence OFL, fichiers de licence inclus).
 - Tous les tokens (couleurs, découpe `--cut`, hauteur de nav, polices) sont dans `:root` en tête de `css/style.css`.
 - **Responsive mobile-first** : grilles `auto-fit`, tiroir de navigation sous 1080 px, aucun défilement horizontal testé à 375 px et 1280 px.
 - **Navigation** : header translucide, lien actif, barre de progression de lecture, tiroir latéral avec overlay (fermeture par clic, lien ou `Échap`), bouton retour en haut.
