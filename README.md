@@ -78,13 +78,6 @@ Un champ piège (`website`) filtre les robots les plus simples.
 
 Le workflow `.github/workflows/static.yml` publie le dépôt sur GitHub Pages à chaque push sur `master`. Activer *Settings → Pages → Source : GitHub Actions*.
 
-## À vérifier avant la mise en ligne
-
-- Les URLs des réseaux sociaux et l'email dans `data/site.json` (valeurs reprises de l'ancien site).
-- Les contenus de `data/*.json`, qui sont des exemples à remplacer par les vrais résultats et joueurs. Les statistiques détaillées des profils (modes, armes, cartes, réglages, derniers matchs) et les ID PUBG sont des **valeurs d'exemple** à remplacer par les données réelles de chaque joueur.
-- Ajouter de vraies photos de joueurs : voir `docs/CONTENU.md`.
-- `legal.html` : compléter l'identité de l'éditeur si la loi l'exige et confirmer la durée de conservation des données (« le temps de traiter la demande »).
-- Les anciens fichiers `assets/ARCN.ico` et `assets/ROG.ico` ne sont plus référencés (ARCN n'est pas le logo R+P) : à supprimer si inutiles.
 
 ## Licence
 
