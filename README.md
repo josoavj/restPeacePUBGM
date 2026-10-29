@@ -11,8 +11,10 @@ Site vitrine de l'équipe compétitive **Rest in Peace (R+P)** : roster, résult
 | Résultats | `results.html` | Tournois filtrables (année, victoires) et derniers matchs |
 | Actus | `news.html` | Articles filtrables par catégorie |
 | À propos | `about.html` | Mission, valeurs, parcours, organisation |
+| Partenaires | `partners.html` | Partenaires et sponsors (depuis `site.json`), appel à collaboration |
 | Contact | `contact.html` | Formulaire, réseaux, FAQ |
 | Rejoindre | `inscription.html` | Formulaire de candidature (sans compte ni mot de passe) |
+| Légal | `legal.html` | Mentions légales, confidentialité, cookies et services tiers |
 
 ## Lancer en local
 
@@ -31,7 +33,9 @@ python -m http.server 8000   # puis http://localhost:8000
 ├── css/style.css         # design system unique (tokens, composants, responsive)
 ├── js/main.js            # nav, footer, rendu JSON, formulaires
 ├── data/                 # contenu éditable : site, players-data, results, news
-├── assets/               # favicon et icônes
+├── assets/               # favicon.svg, apple-touch-icon, og-image, anciennes icônes .ico
+├── scripts/build_seo.py  # génère sitemap.xml et robots.txt
+├── sitemap.xml, robots.txt
 ├── docs/CONTENU.md       # guide d'édition du contenu
 └── .github/workflows/    # déploiement GitHub Pages
 ```
@@ -43,6 +47,23 @@ python -m http.server 8000   # puis http://localhost:8000
 - **Responsive mobile-first** : grilles `auto-fit`, tiroir de navigation sous 1080 px, aucun défilement horizontal testé à 375 px et 1280 px.
 - **Navigation** : header translucide, lien actif, barre de progression de lecture, tiroir latéral avec overlay (fermeture par clic, lien ou `Échap`), bouton retour en haut.
 - **Accessibilité** : lien d'évitement, `aria-current`, `aria-expanded`, focus visible, `prefers-reduced-motion` respecté.
+
+## Thème clair / sombre
+
+Le thème suit la préférence du système au premier chargement, puis le choix de l'utilisateur (bouton soleil/lune du header) est mémorisé dans `localStorage`. Un petit script dans le `<head>` applique le thème avant l'affichage pour éviter tout flash. Le thème clair ne redéfinit que les tokens (`:root[data-theme=light]` dans `css/style.css`) : toute nouvelle couleur doit passer par une variable.
+
+## SEO et performance
+
+- Chaque page a son `<title>`, sa description, une URL canonique, des balises Open Graph / Twitter (image 1200×630 dans `assets/og-image.png`) ; la page d'accueil porte aussi un JSON-LD `Organization`. Les profils joueurs mettent à jour titre, description et canonical dynamiquement.
+- **URL de base** : par défaut `https://josoavj.github.io/restPeacePUBGM/`. Si le site est servi ailleurs (domaine personnalisé), remplace-la partout puis régénère le sitemap :
+
+```bash
+grep -rl "josoavj.github.io/restPeacePUBGM" --include=*.html . | xargs sed -i 's#https://josoavj.github.io/restPeacePUBGM/#https://ton-domaine.tld/#g'
+python scripts/build_seo.py https://ton-domaine.tld/
+```
+
+- Relance `python scripts/build_seo.py` après l'ajout d'une page ou d'un joueur.
+- Font Awesome est chargé sans bloquer l'affichage, le favicon est un SVG de 256 octets (l'ancien `.ico` pesait 250 Ko), et un menu de secours s'affiche sans JavaScript.
 
 ## Formulaires
 
@@ -62,6 +83,8 @@ Le workflow `.github/workflows/static.yml` publie le dépôt sur GitHub Pages à
 - Les URLs des réseaux sociaux et l'email dans `data/site.json` (valeurs reprises de l'ancien site).
 - Les contenus de `data/*.json`, qui sont des exemples à remplacer par les vrais résultats et joueurs. Les statistiques détaillées des profils (modes, armes, cartes, réglages, derniers matchs) et les ID PUBG sont des **valeurs d'exemple** à remplacer par les données réelles de chaque joueur.
 - Ajouter de vraies photos de joueurs : voir `docs/CONTENU.md`.
+- `legal.html` : compléter l'identité de l'éditeur si la loi l'exige et confirmer la durée de conservation des données (« le temps de traiter la demande »).
+- Les anciens fichiers `assets/ARCN.ico` et `assets/ROG.ico` ne sont plus référencés (ARCN n'est pas le logo R+P) : à supprimer si inutiles.
 
 ## Licence
 
