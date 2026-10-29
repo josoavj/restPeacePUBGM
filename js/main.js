@@ -4,8 +4,10 @@
 const $ = (s, c = document) => c.querySelector(s);
 const h = (tag, props, ...kids) => {
   const el = document.createElement(tag);
-  for (const [k, v] of Object.entries(props || {})) {
-    if (v == null || v === false) continue;
+  for (let [k, v] of Object.entries(props || {})) {
+    if (v == null) continue;
+    if (typeof v === 'boolean' && k.startsWith('aria-')) v = String(v); // aria-pressed="true"/"false" (jamais vide)
+    else if (v === false) continue;
     if (k === 'class') el.className = v;
     else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
     else el.setAttribute(k, v === true ? '' : v);
@@ -28,6 +30,17 @@ function buildHeader() {
   const nav = h('nav', { id: 'nav-menu', class: 'nav-links', 'aria-label': 'Navigation principale' },
     LINKS.map(([href, label]) => h('a', { href, 'aria-current': href === active ? 'page' : null }, label)),
     h('a', { class: 'btn btn-primary btn-sm nav-cta', href: 'inscription.html' }, 'Rejoindre la team'));
+  const root = document.documentElement, isLight = () => root.dataset.theme === 'light';
+  const ICON = { sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>', moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>' };
+  const themeBtn = h('button', { class: 'theme-toggle', type: 'button' });
+  const paint = () => {
+    themeBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[isLight() ? 'moon' : 'sun']}</svg>`;
+    themeBtn.setAttribute('aria-label', isLight() ? 'Passer en mode sombre' : 'Passer en mode clair');
+    $('meta[name=theme-color]')?.setAttribute('content', isLight() ? '#f3f6fc' : '#06080d');
+  };
+  themeBtn.addEventListener('click', () => { root.dataset.theme = isLight() ? 'dark' : 'light'; try { localStorage.setItem('theme', root.dataset.theme); } catch { } paint(); });
+  matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => { try { if (localStorage.getItem('theme')) return; } catch { } root.dataset.theme = e.matches ? 'light' : 'dark'; paint(); });
+  paint();
   const bar = h('div', { class: 'progress' });
   const backdrop = h('div', { class: 'backdrop' });
   const set = open => {
@@ -39,11 +52,11 @@ function buildHeader() {
   backdrop.addEventListener('click', () => set(false));
   nav.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
   addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
-  matchMedia('(min-width:1081px)').addEventListener('change', () => set(false));
+  matchMedia('(min-width:1121px)').addEventListener('change', () => set(false));
   $('#site-header').replaceWith(h('header', { class: 'site-header' }, bar,
     h('div', { class: 'container nav' },
       h('a', { class: 'brand', href: 'index.html', 'aria-label': 'R+P Rest in Peace, accueil' }, h('span', { class: 'brand-mark' }, 'R+P'), h('span', { class: 'brand-name' }, 'Rest in Peace')),
-      burger, nav)));
+      nav, h('div', { class: 'nav-tools' }, themeBtn, burger))));
   document.body.append(backdrop);
   const top = h('button', { class: 'to-top', type: 'button', 'aria-label': 'Retour en haut', onclick: () => scrollTo({ top: 0, behavior: 'smooth' }) }, icon('fa-solid fa-arrow-up'));
   document.body.append(top);
@@ -62,7 +75,7 @@ async function buildFooter() {
     h('div', { class: 'foot' },
       h('div', {}, h('a', { class: 'brand', href: 'index.html' }, h('span', { class: 'brand-mark' }, 'R+P'), h('span', { class: 'brand-name' }, site.team.name)),
         h('p', { class: 'muted', style: 'margin-top:1rem' }, 'Team PUBG Mobile compétitive basée à ' + site.team.city + '.')),
-      h('div', {}, h('h4', {}, 'Navigation'), h('ul', {}, LINKS.concat([['inscription.html', 'Rejoindre la team']]).map(([href, l]) => h('li', {}, h('a', { href }, l))))),
+      h('div', {}, h('h4', {}, 'Navigation'), h('ul', {}, LINKS.concat([['inscription.html', 'Rejoindre la team'], ['partners.html', 'Partenaires'], ['legal.html', 'Mentions légales']]).map(([href, l]) => h('li', {}, h('a', { href }, l))))),
       h('div', {}, h('h4', {}, 'Suivre la team'), h('div', { class: 'socials' }, site.socials.map(s => h('a', { href: s.url, target: '_blank', rel: 'noopener noreferrer', 'aria-label': s.label, title: s.label }, icon(s.icon)))))),
     h('p', { class: 'copy' }, `© ${new Date().getFullYear()} ${site.team.name} (R+P). Tous droits réservés. Développé par josoavj.`))));
 }
@@ -108,6 +121,12 @@ const R = {
     withFilters(box, tournaments, [['all', 'Tous'], ['2025', '2025'], ['2024', '2024'], ['2023', '2023'], ['win', 'Victoires']], (t, f) => f === 'all' || f === 'win' ? f === 'all' || t.tier === 'win' : String(t.year) === f, tournamentRow);
   },
   async socials(box) { (await load('site')).socials.forEach(x => box.append(h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer' }, icon(x.icon), x.label))); },
+  async partners(box) {
+    const { partners } = await load('site');
+    if (!partners?.length) return box.append(h('p', { class: 'muted' }, 'Nos partenaires seront annoncés prochainement.'));
+    partners.forEach(x => box.append(reveal(h('article', { class: 'card cut' }, h('span', { class: 'chip' }, x.type), h('h3', { style: 'margin:.6rem 0' }, x.name), h('p', { class: 'muted' }, x.desc),
+      x.url && h('a', { class: 'link-more', href: x.url, target: '_blank', rel: 'noopener noreferrer', style: 'display:inline-block;margin-top:1rem' }, 'Visiter le site')))));
+  },
   async matches(box) { (await load('results')).matches.forEach(m => box.append(matchCard(m))); },
   async news(box) {
     const { news } = await load('news'); const lim = +box.dataset.limit;
@@ -122,13 +141,19 @@ const R = {
     const i = players.findIndex(x => x.id === id), p = players[i];
     if (!p) return box.append(h('p', {}, 'Joueur introuvable. '), h('a', { href: 'joueur.html' }, 'Retour au roster'));
     document.title = `${short(p.name)} — R+P Rest in Peace`;
+    $('meta[name=description]')?.setAttribute('content', `${short(p.name)}, ${p.role} chez R+P : rang ${p.tier.name}, statistiques Solo/Duo/Squad, armes favorites et réglages.`);
+    $('meta[property="og:title"]')?.setAttribute('content', document.title);
+    const url = `${location.origin}${location.pathname}?id=${p.id}`;
+    $('link[rel=canonical]')?.setAttribute('href', url); $('meta[property="og:url"]')?.setAttribute('content', url);
     const f = (n, d = 0) => Number(n).toLocaleString('fr-FR', { maximumFractionDigits: d, minimumFractionDigits: d });
     const mmss = t => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
     const bar = (label, v, text, max = 100) => h('div', { class: 'bar' }, h('span', {}, label), h('i', { style: `--v:${Math.min(100, v / max * 100)}%` }), h('b', {}, text));
     const card = (title, ...kids) => h('section', { class: 'card cut' }, h('h3', {}, title), ...kids);
     const MODES = [['squad', 'Squad'], ['duo', 'Duo'], ['solo', 'Solo']];
     const tiles = h('div', { class: 'stats auto' });
+    const caption = h('p', { class: 'muted', role: 'status', style: 'margin-bottom:1rem' });
     const showMode = k => { const m = p.modes[k];
+      caption.textContent = `Statistiques affichées : ${MODES.find(x => x[0] === k)[1]} · saison en cours`;
       tiles.replaceChildren(...[['Parties', f(m.matches)], ['Victoires', f(m.wins)], ['Win rate', f(m.wins / m.matches * 100, 1) + ' %'], ['Top 10', f(m.top10)], ['Éliminations', f(m.kills)], ['K/D', f(m.kd, 2)], ['Kills / partie', f(m.avgKills, 1)], ['Headshots', f(m.headshot, 1) + ' %'], ['Dégâts moy.', f(m.avgDamage, 1)], ['Survie moy.', mmss(m.survival)], ['Plus long kill', m.longestKill + ' m'], ['Max kills', m.maxKills], ['Assistances', f(m.assists)], ['Réanimations', f(m.revives)]]
         .map(([l, v]) => h('div', { class: 'stat' }, h('b', {}, v), h('span', {}, l)))); };
     const tabs = h('div', { class: 'filters', role: 'group', 'aria-label': 'Mode de jeu' }, MODES.map(([k, l], n) => h('button', { type: 'button', 'aria-pressed': n === 0, onclick: e => { tabs.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === e.currentTarget)); showMode(k); } }, l)));
@@ -143,7 +168,7 @@ const R = {
           h('h1', {}, short(p.name)), h('p', { class: 'muted' }, p.role + ' · Team ' + p.crew), h('p', { style: 'margin-top:.8rem' }, p.bio),
           h('p', { class: 'meta', style: 'margin-top:.8rem' }, h('span', {}, 'ID PUBG : ' + p.pubgId), h('span', {}, 'Dans la team depuis le ' + new Date(p.joinDate).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' }))), h('div', { class: 'actions', style: 'margin-top:1rem' }, copy)),
         h('div', { class: 'rank' }, h('small', {}, 'Rang actuel'), h('b', {}, p.tier.name), h('span', {}, f(p.tier.points) + ' pts'))),
-      h('div', { class: 'section-head', style: 'margin:2.5rem 0 1rem' }, h('div', {}, h('p', { class: 'eyebrow' }, 'Saison en cours'), h('h2', {}, 'Statistiques'))), tabs, tiles,
+      h('div', { class: 'section-head', style: 'margin:2.5rem 0 1rem' }, h('div', {}, h('p', { class: 'eyebrow' }, 'Saison en cours'), h('h2', {}, 'Statistiques'))), tabs, caption, tiles,
       h('div', { class: 'grid wide', style: 'margin-top:1.5rem' },
         card('Armes favorites', ...p.weapons.map(w => bar(w.name, w.kills, f(w.kills) + ' kills', maxK)), h('p', { class: 'muted', style: 'margin-top:1rem;font-size:.85rem' }, 'Headshots : ' + p.weapons.map(w => `${w.name} ${f(w.headshot, 1)} %`).join(' · '))),
         card('Cartes', ...p.maps.map(m => bar(m.name, m.winRate, f(m.winRate, 1) + ' %', 40)), h('p', { class: 'muted', style: 'margin-top:1rem;font-size:.85rem' }, 'Taux de victoire par carte · ' + p.maps.map(m => `${m.name} ${f(m.matches)} parties`).join(' · '))),
@@ -170,6 +195,7 @@ const CHECKS = {
 };
 async function forms() {
   const site = await load('site');
+  document.querySelectorAll('[data-site-email]').forEach(a => { a.textContent = site.team.email; a.setAttribute('href', 'mailto:' + site.team.email); });
   document.querySelectorAll('form[data-form]').forEach(form => {
     const out = h('div', { class: 'alert', role: 'status', hidden: true }); form.append(out);
     const say = (msg, err) => { out.hidden = false; out.className = 'alert' + (err ? ' error' : ''); out.textContent = msg; out.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
