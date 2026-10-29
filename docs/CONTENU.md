@@ -4,10 +4,12 @@ Tout le contenu variable est dans `data/`. Pas besoin de toucher au HTML : ajout
 
 ## `data/players-data.json`
 
-Un joueur = un objet. `id` doit être unique (il sert dans `player-detail.html?id=7`). Le visuel est un monogramme généré depuis le pseudo.
+Un joueur = un objet. `id` doit être unique (il sert dans `player-detail.html?id=7`).
+
+**Pseudo** : toujours au format `R十P٭NOM` (十 = U+5341, ٭ = U+066D ; copie-colle un pseudo existant). Le titre du profil et des cartes affiche le pseudo complet ; à la place de la photo, le site affiche le nom seul (`NOM`, tout ce qui suit le ٭), dont la taille s'adapte à sa longueur.
 
 ```json
-{ "id": 7, "name": "R+P~PSEUDO", "role": "Sniper", "position": "Tireur", "bio": "…", "joinDate": "2025-01-15",
+{ "id": 7, "name": "R十P٭PSEUDO", "role": "Sniper", "position": "Tireur", "bio": "…", "joinDate": "2025-01-15",
   "stats": { "totalMatches": 100, "wins": 20, "top4": 50, "avgKill": 3.5, "winRate": "20.0%", "avgDamage": 280.1 },
   "pubgId": "5123456789", "region": "Afrique", "crew": "Rest in Peace", "perspective": "TPP",
   "tier": { "name": "Conquérant", "points": 5100 },

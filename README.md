@@ -1,6 +1,6 @@
-# R+P — Rest in Peace · Team PUBG Mobile
+# R十P — Rest in Peace · Team PUBG Mobile
 
-Site vitrine de l'équipe compétitive **Rest in Peace (R+P)** : roster, résultats, actualités, histoire de la team et candidature. Site 100 % statique : HTML, CSS et JavaScript sans framework, déployé sur GitHub Pages.
+Site vitrine de l'équipe compétitive **Rest in Peace (R十P)** : roster, résultats, actualités, histoire de la team et candidature. Site 100 % statique : HTML, CSS et JavaScript sans framework, déployé sur GitHub Pages.
 
 ## Aperçu
 
@@ -42,7 +42,7 @@ python -m http.server 8000   # puis http://localhost:8000
 
 ## Design
 
-- Style esport : fond sombre, grille subtile, angles coupés, un seul bleu d'accent (`--blue`, `--blue-d` pour les surfaces pleines), sans dégradé, titres en Rajdhani et texte en Inter, **polices auto-hébergées** dans `assets/fonts/` (licence OFL, fichiers de licence inclus).
+- Style esport : fond sombre, grille subtile, angles coupés, un seul bleu d'accent (`--blue`, `--blue-d` pour les surfaces pleines), sans dégradé, titres en Rajdhani et texte en Inter, **polices auto-hébergées** dans `assets/fonts/` (licence OFL, fichiers de licence inclus). Deux micro-polices (< 1 Ko chacune, extraites de Noto Sans SC et Noto Sans Arabic) fournissent uniquement les caractères **十** (logo R十P) et **٭** (pseudos R十P٭NOM), pour qu'ils s'affichent à l'identique sur tous les appareils.
 - Tous les tokens (couleurs, découpe `--cut`, hauteur de nav, polices) sont dans `:root` en tête de `css/style.css`.
 - **Responsive mobile-first** : grilles `auto-fit`, tiroir de navigation sous 1080 px, aucun défilement horizontal testé à 375 px et 1280 px.
 - **Navigation** : header translucide, lien actif, barre de progression de lecture, tiroir latéral avec overlay (fermeture par clic, lien ou `Échap`), bouton retour en haut.
@@ -81,4 +81,4 @@ Le workflow `.github/workflows/static.yml` publie le dépôt sur GitHub Pages à
 
 ## Licence
 
-Projet développé par **josoavj** pour la team Rest in Peace (R+P).
+Projet développé par **josoavj** pour la team Rest in Peace (R十P).
